@@ -38,3 +38,29 @@
     ),
     rgba(255, 255, 255, 0.83);
 }
+
+.selector {
+  background-image: radial-gradient(
+    at bottom left,
+    #091b29,
+    #0a1c2b,
+    #102637,
+    #1b3748,
+    #2c5567,
+    #71adc1
+  );
+}
+
+.hero {
+  color: linear-gradient(90deg, #e0c274 0%, #e6da94 45.84%, #dfc275 100%);
+}
+
+.carousel-slide {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  border-radius: 8px;
+}

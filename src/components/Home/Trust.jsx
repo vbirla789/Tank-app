@@ -4,7 +4,7 @@ import img1 from "../../assets/img1.jpg";
 const Trust = () => {
   return (
     <div className="flex items-center justify-center flex-col py-10 bg-[#001A28]">
-      <h1 className="font-semibold text-5xl lg:text-4xl text-pink-300 underline text-center">
+      <h1 className="font-semibold text-5xl lg:text-4xl text-pink-300 underline text-center mb-5">
         We are Trusted & Verified
       </h1>
       <div className="flex sm:flex-col">

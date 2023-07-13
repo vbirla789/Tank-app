@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 
 const Items = ({ name, img, time, review }) => {
   return (
-    <div className="head rounded p-5 h-auto min-h-[45vh] w-[54vh] pb-[10px] drop-shadow-md hover:drop-shadow-xl sm:min-h-[40vh]">
+    <div className="head rounded p-5 h-auto min-h-[48vh] w-[54vh] pb-[10px] drop-shadow-md hover:drop-shadow-xl sm:min-h-[40vh]">
       <div className="flex flex-col items-start justify-center mx-auto">
         <div className="flex gap-5 items-center ">
           <div className="flex items-center justify-center">
