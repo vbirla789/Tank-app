@@ -23,7 +23,7 @@ const Slide = ({ items }) => {
     },
   };
   return (
-    <div className="bg-gradient-to-r from-[#01182E] to-[#142D43] py-10">
+    <div className="py-10">
       <h1 className="text-5xl lg:text-4xl font-semibold text-center pb-10 text-transparent bg-gradient-to-r from-green-400 to-yellow-500 bg-clip-text underline">
         Our Happy Stories
       </h1>
@@ -42,7 +42,7 @@ const Slide = ({ items }) => {
             </span>
           </div>
         </div>
-        <div className="w-3/4 md:w-[60%]">
+        <div className="w-3/4 md:w-[70%] sm:w-[100%]">
           <Splide options={splideOptions}>
             {items.map((data, i) => (
               <SplideSlide key={i}>
@@ -52,6 +52,7 @@ const Slide = ({ items }) => {
           </Splide>
         </div>
       </div>
+      <div class="border-b-3 border-dotted border-gray-500 mx-2"></div>
     </div>
   );
 };

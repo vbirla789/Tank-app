@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="flex justify-between px-4 items-end md:px-0">
         <div className="flex items-start font-semibold gap-2 ">
           <div class="h-16 border-l-2 border-gray-500 align-center mt-1 md:hidden"></div>
-          <div className="flex flex-col h-full md:flex-row md:absolute top-[58vh]  md:gap-2 md:justify-center md:w-full">
+          <div className="flex flex-col h-full md:flex-row md:absolute top-[48vh] md:gap-2 md:justify-center w-full">
             <p className="text-[#FF7676]">Na Garam</p>
             <p className="text-[#44B0FF]">Na Thanda</p>
             <p className="text-[#B0FF4D]">Sirf Tazaa</p>
@@ -23,11 +23,11 @@ const Hero = () => {
           <h1 className="text-5xl font-bold text-[#FFF] md:text-center">
             Water Tank
           </h1>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent text-center mt-2 md:mb-[20vh]">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent text-center mt-2 md:mb-[12vh] mb-[5vh]">
             Doctor
           </h1>
 
-          <div className="flex items-center justify-center mt-8 gap-2">
+          <div className="flex items-center justify-center gap-2">
             <hr class="w-[10vh] border-t-2  border-yellow-300 "></hr>
             <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 ">
               SHOP NOW!
@@ -38,8 +38,8 @@ const Hero = () => {
             <hr class="w-[10vh]  border-t-2  border-yellow-300"></hr>
           </div>
         </div>
-        <div className="bg-[#30303066] h-auto rounded-2xl px-2 py-2 md:absolute right-2 top-[32vh]">
-          <ul className="flex flex-col items-center gap-3 justify-center">
+        <div className="bg-[#30303066] h-auto rounded-2xl px-2 py-3 md:absolute right-2 top-[90vh]">
+          <ul className="flex flex-col items-center gap-4 justify-center">
             <li>
               <img src={insta} className="w-6 h-6" />
             </li>
@@ -52,7 +52,7 @@ const Hero = () => {
           </ul>
         </div>
       </div>
-      <div className="flex justify-around">
+      <div className="flex gap-[20vh] justify-around">
         <div className="text-white flex flex-col justify-center md:absolute md:flex-row-reverse top-[12vh] md:w-full md:gap-4 md:bg-[#E0C375] md:h-[10vh] md:items-center">
           <div className="md:flex md:flex-row md:gap-2">
             <p className="font-semibold text-yellow-300 text-xl md:text-black">
@@ -64,18 +64,19 @@ const Hero = () => {
           </div>
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
-        <div className="ml-[5vh] md:ml-0">
+        <div className="ml-[10vh] md:ml-0 z-5">
+          <div className="h-[230px] w-[300px] rounded-full bg-[#FFFFFFBA] absolute top-[80%] left-[40%] md:left-[13%] md:top-[82%] md:w-[280px]"></div>
           <div className="flex relative">
-            <img src={error} className="w-[80vh] h-auto " />
-            <img src={splash} className="w-[30vh] h-auto absolute left-[80%]" />
+            <img src={error} className="w-[70vh] h-auto " />
+
+            <img
+              src={splash}
+              className="w-[30vh] h-auto absolute left-[80%] md:w-[10vh]"
+            />
             <div className="w-[40px] h-[40px] bg-[#E5E5E5C4] rounded-full absolute right-[42%] top-[40%] flex items-center justify-center">
               <BsFillPlayFill className="text-3xl" />
             </div>
           </div>
-
-          {/* <div className="absolute top-[100%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0">
-            <div className="h-[200px] w-[220px] rounded-full bg-[#FFFFFFBA]"></div>
-          </div> */}
         </div>
 
         <div className="flex items-center md:hidden">

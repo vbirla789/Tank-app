@@ -1,29 +1,84 @@
 import React from "react";
+import { MinusIcon, PlusIcon, TrashIcon } from "@heroicons/react/24/solid";
 
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { AiOutlineDelete } from "react-icons/ai";
-import { removeItem } from "../redux/cartReducer";
+import {
+  removeItem,
+  setDecreaseItemQTY,
+  setIncreaseItemQTY,
+} from "../redux/cartReducer";
 
-const CartItems = ({ item: { id, img, title, price } }) => {
+const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
   const dispatch = useDispatch();
+  const onIcreaseItemQTY = () => {
+    dispatch(
+      setIncreaseItemQTY({
+        id,
+        title,
+        img,
+        price,
+        cartQuantity,
+      })
+    );
+  };
+  const onDecreaseItemQTY = () => {
+    dispatch(
+      setDecreaseItemQTY({
+        id,
+        title,
+        img,
+        price,
+        cartQuantity,
+      })
+    );
+  };
   return (
     <div key={id}>
       <div className="flex justify-between items-center">
         <div>
           <NavLink>
-            <img src={img} className="h-[50px] w-[50px]" />
+            <img src={img} className="h-[60px] w-[60px]" />
           </NavLink>
         </div>
         <div>
-          <h1>{title}</h1>
-          <div>
-            <p>{price}</p>
+          <div className="flex flex-col gap-2">
+            <p className="text-center ">{title}</p>
+
+            <div className="flex items-center justify-around ">
+              <button
+                type="button"
+                className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
+              >
+                <MinusIcon
+                  className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2] "
+                  onClick={onDecreaseItemQTY}
+                />
+              </button>
+              <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center">
+                2
+              </div>
+
+              <button
+                type="button"
+                className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
+              >
+                <PlusIcon
+                  className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]"
+                  onClick={onIcreaseItemQTY}
+                />
+              </button>
+            </div>
           </div>
         </div>
-        <div>
+
+        <div className="flex flex-col gap-2">
+          <div>
+            <h1>{price}</h1>
+          </div>
           <button onClick={() => dispatch(removeItem(id))}>
-            <AiOutlineDelete />
+            <AiOutlineDelete className="text-xl" />
           </button>
         </div>
       </div>

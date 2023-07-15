@@ -2,7 +2,7 @@ import React from "react";
 
 const Content = () => {
   return (
-    <div className="bg-[#27ACAC] flex items-center justify-evenly w-full py-8 md:flex-col md:gap-4">
+    <div className="bg-[#27ACAC] flex items-center justify-evenly w-full py-8 md:flex-col md:gap-10">
       <div className="flex">
         <div className="flex mr-1">
           <p className="text-7xl font-bold text-yellow-300 ">#1</p>
@@ -15,8 +15,7 @@ const Content = () => {
       <div className="w-[50%]">
         <p className="font-semibold text-[#fff]">
           "Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s"
+          Lorem Ipsum has been the industry's"
         </p>
       </div>
     </div>

@@ -15,8 +15,11 @@ const Home = () => {
     <div className="min-h-[200vh] pt-[10vh] md:pt-[12vh]">
       <Hero />
       <Content />
-      <Slide items={items} />
-      <Select />
+      <div className="bg-gradient-to-r from-[#01182E] to-[#142D43] ">
+        <Carousel />
+        <Slide items={items} />
+        <Select />
+      </div>
 
       <Trust />
       <Install />

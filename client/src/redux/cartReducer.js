@@ -45,10 +45,34 @@ export const counterSlice = createSlice({
       );
       state.cartTotalAmount = totalAmount;
     },
+    setIncreaseItemQTY: (state, action) => {
+      const itemIndex = state.products.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (itemIndex >= 0) {
+        state.products[itemIndex].cartQuantity += 1;
+      }
+    },
+    setDecreaseItemQTY: (state, action) => {
+      const itemIndex = state.products.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (state.products[itemIndex].cartQuantity > 1) {
+        state.products[itemIndex].cartQuantity -= 1;
+      }
+    },
   },
 });
 
-export const { addToCart, removeItem, resetCart, getTotals } =
-  counterSlice.actions;
+export const {
+  addToCart,
+  removeItem,
+  resetCart,
+  getTotals,
+  setIncreaseItemQTY,
+  setDecreaseItemQTY,
+} = counterSlice.actions;
 
 export default counterSlice.reducer;
