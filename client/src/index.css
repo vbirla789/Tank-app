@@ -64,3 +64,22 @@
   color: #fff;
   border-radius: 8px;
 }
+
+.font {
+  font-family: Pacifico;
+}
+
+.hero_font {
+  font-family: Inknut Antiqua;
+}
+
+.content-font {
+  font-family: PT Serif;
+}
+
+.content-head {
+  font-family: hamlet;
+}
+.slide-head {
+  font-family: Abhaya Libre;
+}

@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-10 z-10">
+    <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-10 z-10 opacity-90">
       <div className="flex gap-2">
         <Link to="/">
           <img src={tank} className="w-10 h-auto " />

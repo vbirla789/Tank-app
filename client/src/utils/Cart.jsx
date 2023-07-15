@@ -9,7 +9,7 @@ const Cart = () => {
   const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
 
   return (
-    <div className="absolute z-100 color opacity-100 py-5 px-3 top-[12vh] lg:top-[14vh] lg:right-4 right-4 w-[60vh] flex flex-col gap-10 min-h-[80vh] rounded-xl md:w-[40vh] md:min-h-[60vh]">
+    <div className="absolute z-100 color py-5 px-3 top-[12vh] lg:top-[14vh] lg:right-4 right-4 w-[60vh] flex flex-col gap-10 min-h-[80vh] rounded-xl md:w-[40vh] md:min-h-[60vh]">
       <h1>Products in your cart</h1>
       {products?.map((item, i) => (
         <CartItems item={item} key={i} />

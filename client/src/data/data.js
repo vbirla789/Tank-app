@@ -1,4 +1,5 @@
 import img1 from "../assets/img1.jpg";
+import img2 from "../assets/WhatsApp Image 2023-06-26 at 2.33 1.png";
 export const items = [
   {
     name: "Suveer Sood",
@@ -27,5 +28,11 @@ export const items = [
     time: "6 months ago",
     review:
       "The location of the Cozy Haven Inn is also fantastic. It's nestled in a quiet neighborhood, providing a peaceful retreat.",
+  },
+];
+
+export const images = [
+  {
+    img: img2,
   },
 ];
