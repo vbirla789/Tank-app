@@ -57,7 +57,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
                 />
               </button>
               <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center">
-                2
+                {cartQuantity}
               </div>
 
               <button

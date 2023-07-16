@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import { images } from "./data/data";
+import { images, items } from "./data/data";
 
 const Layout = () => {
   return (
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <Product images={images} />,
+        element: <Product images={images} items={items} />,
       },
     ],
   },

@@ -46,49 +46,49 @@ function App() {
               <img
                 src={slide_image_1}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh] rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh] rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_2}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[80vh] lg:h-[50vh]  rounded-2xl"
+                className="w-[60vh] h-[80vh] lg:h-[40vh]  rounded-2xl"
               />
             </SwiperSlide>
 
@@ -109,11 +109,12 @@ function App() {
             We would love to hear about what is right but also about what we can
             improve for better services.
           </p>
-          <button className="bg-violet-600 lg:py-1 lg:px-3 rounded-md mt-10 text-white px-8 py-2 text-xl lg:text-lg">
-            Read more
+          <button className="bg-[#fff] lg:py-1 lg:px-3 rounded-md mt-10 text-black px-8 py-2 text-xl lg:text-lg font-semibold">
+            explore
           </button>
         </div>
       </div>
+      <hr class="h-[5px] mt-4 mx-10 bg-gray-200 border-0 border-dotted dark:bg-gray-700 "></hr>
     </div>
   );
 }

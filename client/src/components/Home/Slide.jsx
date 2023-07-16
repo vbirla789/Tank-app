@@ -23,7 +23,7 @@ const Slide = ({ items }) => {
     },
   };
   return (
-    <div className="py-10">
+    <div className="pt-0">
       <h1 className="text-5xl lg:text-4xl font-semibold text-center pb-10 text-transparent bg-gradient-to-r from-green-400 to-yellow-500 bg-clip-text underline">
         Our Happy Stories
       </h1>
@@ -52,7 +52,7 @@ const Slide = ({ items }) => {
           </Splide>
         </div>
       </div>
-      <div class="border-b-3 border-dotted border-gray-500 mx-2"></div>
+      <hr class="h-[5px] mt-10 mx-10 bg-gray-200 border-0 border-dotted dark:bg-gray-700 "></hr>
     </div>
   );
 };

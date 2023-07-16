@@ -5,14 +5,16 @@ import Img from "../utils/Img";
 
 import { SplideSlide, Splide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import Items from "../utils/Items";
 
 const id = 1;
 const img =
   "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67";
 const title = "EXTREME COVER| 750 litre";
 const price = 1000;
+const cartQuantity = 1;
 
-const Product = ({ images }) => {
+const Product = ({ images, items }) => {
   const splideOptions = {
     perPage: 1,
     perMove: 1,
@@ -30,14 +32,31 @@ const Product = ({ images }) => {
       425: { perPage: 1 },
     },
   };
+  const reviewsOptions = {
+    perPage: 2.5,
+    perMove: 1,
+    type: "loop",
+    rewind: true,
+    keyboard: "global",
+    gap: "1rem",
+    pagination: false,
+    padding: "2rem",
+    breakpoints: {
+      1200: { perPage: 3 },
+      991: { perPage: 2 },
+      768: { perPage: 1 },
+      500: { perPage: 1 },
+      425: { perPage: 1 },
+    },
+  };
   const dispatch = useDispatch();
 
   const addCart = () => {
-    const item = { id, img, title, price };
+    const item = { id, img, title, price, cartQuantity };
     dispatch(addToCart(item));
   };
   return (
-    <div className="flex justify-center items-center py-[15vh] lg:flex-col">
+    <div className="flex justify-center items-center py-[15vh] flex-col">
       <div className="mx-4 bg-white flex md:flex-col justify-around w-full ">
         <div className="w-[40%] md:w-[90%] mx-auto">
           <Splide options={splideOptions}>

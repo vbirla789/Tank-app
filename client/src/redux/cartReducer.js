@@ -28,13 +28,13 @@ export const counterSlice = createSlice({
       state.products = [];
     },
     getTotals: (state, action) => {
-      let { totalAmount } = state.products.reduce(
+      let { totalAmount, totalQTY } = state.products.reduce(
         (cartTotal, product) => {
-          const { price } = product;
-
-          const totalPrice = price;
+          const { price, cartQuantity } = product;
+          const totalPrice = price * cartQuantity;
 
           cartTotal.totalAmount += totalPrice;
+          cartTotal.totalQTY += cartQuantity;
 
           return cartTotal;
         },
@@ -44,6 +44,7 @@ export const counterSlice = createSlice({
         }
       );
       state.cartTotalAmount = totalAmount;
+      state.cartTotalQuantity = totalQTY;
     },
     setIncreaseItemQTY: (state, action) => {
       const itemIndex = state.products.findIndex(
