@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
@@ -10,13 +10,29 @@ import Product from "./pages/Product";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { images, items } from "./data/data";
+import Video from "./utils/Video";
 
 const Layout = () => {
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
   return (
     <div className="app">
-      <Navbar />
-      <Outlet />
-      <Footer />
+      {loading ? (
+        <div className="">
+          <Video />
+        </div>
+      ) : (
+        <div>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </div>
+      )}
     </div>
   );
 };
@@ -40,9 +56,7 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

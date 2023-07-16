@@ -6,7 +6,7 @@ import whats from "../../assets/whatsapp.png";
 import mail from "../../assets/gmail.png";
 import error from "../../assets/errer.png";
 import splash from "../../assets/splash1 1.png";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   return (
@@ -30,11 +30,11 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-2 md:mx-2">
             <hr class="w-[10vh] border-t-2  border-yellow-300 "></hr>
-            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 ">
+            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 z-10">
               <Link to="/product/1">SHOP NOW!</Link>
             </button>
-            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 hidden md:block hero_font font-bold">
-              Explore More
+            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 hidden md:block hero_font font-bold z-10">
+              <Link to="Why">Explore More</Link>
             </button>
             <hr class="w-[10vh] border-t-2  border-yellow-300"></hr>
           </div>
@@ -66,7 +66,7 @@ const Hero = () => {
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[9%] md:left-[8%] md:w-[280px] md:h-[200px] drop-shadow-3xl"></div>
+          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[9%] md:left-[8%] sm:w-[280px] sm:h-[200px] drop-shadow-3xl lg:w-[32vh] lg:h-[25vh]"></div>
           <div className="flex relative">
             <img src={error} className="w-[70vh] h-auto md:w-[40vh]" />
 

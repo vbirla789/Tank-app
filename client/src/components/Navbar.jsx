@@ -21,7 +21,7 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-10 z-10 opacity-90">
+    <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-5 z-20 opacity-90">
       <div className="flex gap-2">
         <Link to="/">
           <img src={tank} className="w-10 h-auto " />
@@ -52,21 +52,33 @@ const Navbar = () => {
           <ul className="flex items-center gap-4">
             <li>
               <div onClick={() => setOpen(!open)} className="relative pt-2">
-                <AiOutlineShoppingCart className="text-xl" />
+                <AiOutlineShoppingCart className="text-2xl" />
                 <span className="absolute top-0 left-3 text-white rounded-full bg-slate-600 h-[15px] w-[15px] flex items-center justify-center text-xs">
                   {products.length}
                 </span>
               </div>
             </li>
-            <li>Sign up</li>
+            <li className="md:hidden ">Sign up</li>
           </ul>
         </div>
-        <div className="hidden lg:block mt-1">
+        <div className="hidden lg:block ">
           <RxHamburgerMenu
-            className="text-xl"
+            className="text-4xl"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
           {isMenuOpen && <Menudropdown isMenuOpen={isMenuOpen} />}
+        </div>
+        <div
+          className={
+            isMenuOpen
+              ? "absolute right-[50vh] hidden md:block md:right-5 lg:top-[40vh]"
+              : "hidden"
+          }
+        >
+          <RxCross1
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-white text-4xl"
+          />
         </div>
       </div>
       {open && <Cart checkoutHandler={checkoutHandler} />}

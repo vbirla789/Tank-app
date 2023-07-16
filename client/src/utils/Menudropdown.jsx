@@ -14,8 +14,11 @@ const Menudropdown = ({ isMenuOpen }) => {
     >
       <div>
         <Link to="/">
-          <img src={tank} className="w-10 h-auto " />
+          <img src={tank} className="w-[10vh] h-auto " />
         </Link>
+      </div>
+      <div>
+        <Link to="product/1">Sign Up</Link>
       </div>
       <div>
         <Link to="product/1">About</Link>
@@ -31,9 +34,6 @@ const Menudropdown = ({ isMenuOpen }) => {
       </div>
       <div>
         <Link to="product/1">Contact</Link>
-      </div>
-      <div>
-        <Link to="product/2">About</Link>
       </div>
     </nav>
   );
