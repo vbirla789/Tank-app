@@ -13,6 +13,7 @@ const Video = () => {
       >
         <source type="video/mp4" src={video} />
       </video>
+      <div className=" bg-[#9ce3ff] h-[50vh]"></div>
     </div>
   );
 };

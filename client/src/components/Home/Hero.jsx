@@ -7,6 +7,7 @@ import mail from "../../assets/gmail.png";
 import error from "../../assets/errer.png";
 import splash from "../../assets/splash1 1.png";
 import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -30,11 +31,13 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-2 md:mx-2">
             <hr class="w-[10vh] border-t-2  border-yellow-300 "></hr>
-            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 z-10">
-              <Link to="/product/1">SHOP NOW!</Link>
+            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 z-10 font-semibold">
+              <NavLink to="/product/1">SHOP NOW!</NavLink>
             </button>
-            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 hidden md:block hero_font font-bold z-10">
-              <Link to="Why">Explore More</Link>
+            <button className="rounded-full border-2 border-yellow-300 py-1 px-4 text-yellow-300 hidden md:block hero_font font-semibold z-10">
+              <Link to="Why" smooth={true} spy={true} offset={-180}>
+                Explore More
+              </Link>
             </button>
             <hr class="w-[10vh] border-t-2  border-yellow-300"></hr>
           </div>

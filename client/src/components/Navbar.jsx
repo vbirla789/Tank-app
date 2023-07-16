@@ -62,23 +62,18 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden lg:block ">
-          <RxHamburgerMenu
-            className="text-4xl"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          />
+          {isMenuOpen ? (
+            <RxCross1
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white text-3xl mt-1"
+            />
+          ) : (
+            <RxHamburgerMenu
+              className="text-4xl"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            />
+          )}
           {isMenuOpen && <Menudropdown isMenuOpen={isMenuOpen} />}
-        </div>
-        <div
-          className={
-            isMenuOpen
-              ? "absolute right-[50vh] hidden md:block md:right-5 lg:top-[40vh]"
-              : "hidden"
-          }
-        >
-          <RxCross1
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white text-4xl"
-          />
         </div>
       </div>
       {open && <Cart checkoutHandler={checkoutHandler} />}
