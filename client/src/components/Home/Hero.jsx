@@ -69,7 +69,7 @@ const Hero = () => {
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[9%] md:left-[8%] sm:w-[280px] sm:h-[200px] drop-shadow-3xl lg:w-[32vh] lg:h-[25vh]"></div>
+          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[9%] md:left-[8%] xsm:w-[280px] xsm:h-[200px] drop-shadow-3xl lg:w-[32vh] lg:h-[25vh]"></div>
           <div className="flex relative">
             <img src={error} className="w-[70vh] h-auto md:w-[40vh]" />
 
