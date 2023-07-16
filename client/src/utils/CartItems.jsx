@@ -36,7 +36,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
   };
   return (
     <div key={id}>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-1 py-2">
         <div>
           <NavLink>
             <img src={img} className="h-[60px] w-[60px]" />
@@ -46,7 +46,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
           <div className="flex flex-col gap-2">
             <p className="text-center ">{title}</p>
 
-            <div className="flex items-center justify-around ">
+            <div className="flex items-center justify-around bg-slate-400 w-[20vh] sm:w-[10vh]  lg:w-[15vh] mx-auto rounded-md">
               <button
                 type="button"
                 className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"

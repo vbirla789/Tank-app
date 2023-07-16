@@ -65,7 +65,7 @@ const Navbar = () => {
           {isMenuOpen ? (
             <RxCross1
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white text-3xl mt-1"
+              className="text-white text-3xl mt-1 absolute top-4 z-30 right-2 "
             />
           ) : (
             <RxHamburgerMenu
