@@ -36,7 +36,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
   };
   return (
     <div key={id}>
-      <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-1 py-3">
+      <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3">
         <div>
           <NavLink>
             <img src={img} className="h-[60px] w-[60px]" />
@@ -56,7 +56,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
                   onClick={onDecreaseItemQTY}
                 />
               </button>
-              <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center">
+              <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center text-sm">
                 {cartQuantity}
               </div>
 
@@ -75,7 +75,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
 
         <div className="flex flex-col gap-2">
           <div>
-            <h1 className="text-base">{price}</h1>
+            <h1 className="text-base">₹ {price}</h1>
           </div>
           <button onClick={() => dispatch(removeItem(id))}>
             <AiOutlineDelete className="text-xl" />

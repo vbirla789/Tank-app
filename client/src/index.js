@@ -12,6 +12,7 @@ import store from "./redux/store";
 import { images, items } from "./data/data";
 import Video from "./utils/Video";
 import PaySuss from "./utils/PaySuss";
+import About from "./pages/About";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/paymentsuccess",
         element: <PaySuss />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },

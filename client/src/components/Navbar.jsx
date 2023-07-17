@@ -56,14 +56,14 @@ const Navbar = () => {
     <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-5 z-20 blur-xsm">
       <div className="flex gap-2">
         <Link to="/">
-          <img src={tank} className="w-10 h-auto " />
+          <img src={tank} className="w-10 h-auto mt-1 lg:mt-0" />
         </Link>
         <p className="w-[50%] lg:text-sm">Water Tank Doctor</p>
       </div>
       <div className="md:hidden">
         <ul className="flex gap-4 items-center">
           <li>
-            <Link to="product/1">About</Link>
+            <Link to="about">About</Link>
           </li>
           <li>
             <Link to="product/1">Product</Link>

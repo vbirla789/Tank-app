@@ -15,7 +15,7 @@ const Slide = ({ items }) => {
     pagination: false,
     padding: "2rem",
     breakpoints: {
-      1200: { perPage: 3 },
+      1200: { perPage: 2.5 },
       991: { perPage: 2 },
       768: { perPage: 1 },
       500: { perPage: 1 },

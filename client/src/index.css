@@ -83,3 +83,16 @@
 .slide-head {
   font-family: Abhaya Libre;
 }
+
+.about_color {
+  background: linear-gradient(102deg, #0b1d2c 0%, #1a3446 100%);
+}
+
+.about_head_color {
+  background: linear-gradient(
+    126deg,
+    rgba(21, 57, 84, 0.54) 0%,
+    rgba(49, 96, 122, 0.03) 53.13%,
+    rgba(114, 162, 180, 0) 100%
+  );
+}

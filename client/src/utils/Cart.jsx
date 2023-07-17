@@ -34,7 +34,7 @@ const Cart = ({ checkoutHandler }) => {
           <div className="flex justify-between w-[90%] ">
             <h1>Subtotal</h1>
 
-            <span>{totalAmount}</span>
+            <span>₹ {totalAmount}</span>
           </div>
           <div className="flex w-full ">
             <button
