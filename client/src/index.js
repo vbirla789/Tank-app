@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { images, items } from "./data/data";
 import Video from "./utils/Video";
+import PaySuss from "./utils/PaySuss";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <Product images={images} items={items} />,
+      },
+      {
+        path: "/paymentsuccess",
+        element: <PaySuss />,
       },
     ],
   },

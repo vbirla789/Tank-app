@@ -7,19 +7,51 @@ import Cart from "../utils/Cart";
 import tank from "../assets/tank-logo.png";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import img from "../assets/WhatsApp Image 2023-06-26 at 2.33 1.png";
 
 const Navbar = () => {
-  const checkoutHandler = async (amount) => {
-    const {} = await axios.post("http://localhost:4000", {
-      amount,
-    });
-  };
-
   const [open, setOpen] = useState(false);
 
   const products = useSelector((state) => state.cart.products);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const checkoutHandler = async (totalAmount) => {
+    const {
+      data: { key },
+    } = await axios.get("http://localhost:4000/api/getkey");
+
+    const {
+      data: { order },
+    } = await axios.post("http://localhost:4000/api/checkout", {
+      totalAmount,
+    });
+    // console.log(key);
+    const options = {
+      key,
+      amount: order.amount,
+      currency: "INR",
+      name: "Tank App",
+      description: "Test Transaction",
+      image: img,
+      order_id: order.id,
+      callback_url: "http://localhost:4000/api/paymentverification",
+      prefill: {
+        name: "Gaurav Kumar",
+        email: "gaurav.kumar@example.com",
+        contact: "9000090000",
+      },
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#2c5567",
+      },
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+  };
+
   return (
     <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-5 z-20 opacity-90">
       <div className="flex gap-2">
