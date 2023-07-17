@@ -13,6 +13,7 @@ import { images, items } from "./data/data";
 import Video from "./utils/Video";
 import PaySuss from "./utils/PaySuss";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
