@@ -20,7 +20,7 @@ const Cart = ({ checkoutHandler }) => {
   return (
     <nav
       className="left-0  
-     color flex flex-col gap-5 opacity-100 absolute top-0 py-6 px-2 transition-all duration-500 w-[60%] h-[100vh] mt-0 font-semibold text-xl md:w-[72%]"
+     color flex flex-col gap-5 md:gap-0 opacity-100 absolute top-0 py-6 px-2 transition-all duration-500 w-[60%] h-[100vh] mt-0 font-semibold text-xl md:w-[72%]"
     >
       <div className="flex gap-4 items-center ml-5 text-3xl mb-5">
         <BsFillCartDashFill />
@@ -36,9 +36,9 @@ const Cart = ({ checkoutHandler }) => {
 
             <span>{totalAmount}</span>
           </div>
-          <div className="flex w-full items-start">
+          <div className="flex w-full ">
             <button
-              className="bg-slate-900 text-white px-8 py-1 mb-0 mt-5 rounded-full"
+              className="bg-slate-900 text-white px-8 py-1 mb-0 mt-5 rounded-full mx-auto"
               onClick={() => checkoutHandler(totalAmount)}
             >
               Checkout

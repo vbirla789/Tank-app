@@ -56,7 +56,7 @@ const Hero = () => {
           </ul>
         </div>
       </div>
-      <div className="flex gap-[20vh] justify-around px-[20vh] md:px-0">
+      <div className="flex gap-[20vh] lg:gap-2 justify-around px-[20vh] md:px-0 lg:px-5">
         <div className="text-white flex flex-col justify-center md:absolute md:flex-row-reverse top-[12vh] md:w-full md:gap-4 md:bg-[#E0C375] md:h-[6vh] md:items-center">
           <div className="md:flex md:flex-row md:gap-2">
             <p className="font-semibold text-yellow-300 text-xl md:text-black">
@@ -69,13 +69,13 @@ const Hero = () => {
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[9%] md:left-[8%] xsm:w-[280px] xsm:h-[200px] drop-shadow-3xl lg:w-[32vh] lg:h-[25vh]"></div>
+          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-3xl lg:w-[52vh] lg:h-[35vh]"></div>
           <div className="flex relative">
-            <img src={error} className="w-[70vh] h-auto md:w-[40vh]" />
+            <img src={error} className="w-[70vh] h-auto sm:w-[60vh]" />
 
             <img
               src={splash}
-              className="w-[30vh] h-auto absolute left-[80%] md:w-[10vh]"
+              className="w-[30vh] h-auto absolute left-[80%] md:w-[10vh] lg:w-[20vh] "
             />
             <div className="w-[40px] h-[40px] bg-[#E5E5E5C4] rounded-full absolute right-[42%] top-[40%] flex items-center justify-center">
               <BsFillPlayFill className="text-3xl" />
