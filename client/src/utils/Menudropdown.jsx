@@ -20,7 +20,7 @@ const Menudropdown = ({ isMenuOpen }) => {
       </div> */}
 
       <div>
-        <Link to="product/1">About</Link>
+        <Link to="about">About</Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
@@ -36,7 +36,7 @@ const Menudropdown = ({ isMenuOpen }) => {
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="product/1">Contact</Link>
+        <Link to="contact">Contact</Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>

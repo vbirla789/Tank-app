@@ -6,8 +6,8 @@ import frame2 from "../assets/Frame 5.svg";
 const About = () => {
   return (
     <div className="min-h-[200vh] pt-[10vh] md:pt-[12vh] about_color py-10">
-      <div className="about_head_color mt-5 mx-[10vh] pt-10 pb-[20vh] px-[15vh] rounded-lg md:px-[10vh] md:pb-[10vh]">
-        <h1 className="text-center font-semibold text-5xl lg:text-4xl text-orange-300 underline mb-[15vh]">
+      <div className="about_head_color mt-5 mx-[10vh] pt-10 pb-[20vh] px-[15vh] rounded-lg md:px-[10vh] md:pb-[10vh] sm:px-4 sm:mx-[5vh] sm:pb-[5vh]">
+        <h1 className="text-center font-semibold text-5xl lg:text-4xl text-orange-300 underline mb-[15vh] md:mb-[5vh]">
           About Us
         </h1>
         <div className="flex md:flex-col-reverse justify-between items-center w-full">
@@ -18,7 +18,7 @@ const About = () => {
             and scramled it to make a type specimen book.
           </p>
 
-          <img src={img} className="w-[70vh] rounded-lg h-[40vh]" />
+          <img src={img} className="w-[70vh] rounded-lg h-[40vh] sm:h-[20vh]" />
         </div>
       </div>
       <hr class="h-[5px] mt-4 bg-gray-200 border-0 border-dotted dark:bg-gray-700 hidden md:block mx-6 "></hr>
