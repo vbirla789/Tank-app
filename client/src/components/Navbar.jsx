@@ -97,7 +97,7 @@ const Navbar = () => {
           {isMenuOpen ? (
             <RxCross1
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white text-3xl mt-1 absolute top-4 z-30 right-5 "
+              className="text-white text-3xl mt-1 absolute top-4 z-30 right-5"
             />
           ) : (
             <RxHamburgerMenu
@@ -109,6 +109,16 @@ const Navbar = () => {
         </div>
       </div>
       {open && <Cart checkoutHandler={checkoutHandler} />}
+      {open ? (
+        <div className="absolute top-4 right-[35%] md:right-[10%] color rounded-[50%] p-2 opacity-90">
+          <RxCross1
+            onClick={() => setOpen(!open)}
+            className="text-white text-3xl mt-1  z-30 "
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

@@ -69,13 +69,12 @@ const Hero = () => {
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[45vh] w-[55vh] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-3xl lg:w-[52vh] lg:h-[35vh]"></div>
+          <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-3xl lg:w-[52vh] lg:h-[35vh]"></div>
           <div className="flex relative">
-            <img src={error} className="w-[70vh] h-auto sm:w-[60vh]" />
-
+            <img src={error} className="w-[370px] h-auto sm:w-[60vh]" />
             <img
               src={splash}
-              className="w-[30vh] h-auto absolute left-[80%] md:w-[10vh] lg:w-[20vh] "
+              className="w-[20vh] h-auto absolute left-[80%] md:w-[10vh] lg:w-[20vh] "
             />
             <div className="w-[40px] h-[40px] bg-[#E5E5E5C4] rounded-full absolute right-[42%] top-[40%] flex items-center justify-center">
               <BsFillPlayFill className="text-3xl" />
