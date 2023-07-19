@@ -9,9 +9,5 @@ export const connectDB = async () => {
     })
     .then(() => {
       console.log("MONGO Connection Open");
-    })
-    .catch((err) => {
-      console.log("MONGO Connection ERROR!!");
-      console.log(err);
     });
 };

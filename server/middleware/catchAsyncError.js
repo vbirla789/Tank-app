@@ -1,3 +1,3 @@
-export const Func = (req, res, next) => {
-  Promise.resolve(Func(req, res, next)).catch(next);
+export const asyncError = (theFunc) => (req, res, next) => {
+  Promise.resolve(theFunc(req, res, next)).catch(next);
 };
