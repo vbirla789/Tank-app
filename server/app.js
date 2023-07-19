@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import paymentRoute from "./routes/paymentRoutes.js";
 import cors from "cors";
 import productRoute from "./routes/productRoute.js";
+import { Error } from "./middleware/error.js";
 
 config({ path: "./config/config.env" });
 
@@ -19,6 +20,9 @@ app.get("/api/getkey", (req, res) =>
 );
 
 // ROUTE EXPORTS
-// const product = require("./routes/productRoute.js");
 
 app.use("/api/v1", productRoute);
+
+//MIDDLEWARE FOR ERROR
+
+app.use(Error);
