@@ -19,7 +19,7 @@ function App() {
       <h1 className="font-semibold text-5xl lg:text-4xl text-orange-300 underline mb-10 text-center">
         Why Us?
       </h1>
-      <div className="flex md:flex-col items-center justify-around mx-[20vh] lg:mx-10">
+      <div className="flex lg:flex-col items-center justify-around mx-[20vh] lg:mx-10">
         <div className="w-[50%] mx-auto lg:w-[100%] mb-5">
           <Swiper
             effect={"coverflow"}

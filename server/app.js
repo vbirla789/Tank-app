@@ -5,11 +5,12 @@ import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 import productRoute from "./routes/productRoute.js";
 import { Error } from "./middleware/error.js";
+import cookieParser from "cookie-parser";
 
 config({ path: "./config/config.env" });
 
 export const app = express();
-
+app.use(cookieParser());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -12,7 +12,7 @@ const Select = () => {
         industry.Lorem Ipsum is simply dummy text of the printing and
         typesetting industry.
       </p>
-      <div className="flex justify-around items-center w-full mt-5 md:flex-col md:gap-6">
+      <div className="flex justify-around items-center w-full mt-5 lg:flex-col lg:gap-6">
         <div className="bg-gradient-to-br from-white/30 to-white/50  bg-opacity-0 bg-opacity-66 shadow-md w-[50vh] h-auto rounded-2xl p-2 flex items-center justify-center flex-col text-white duration-500 ease-in-out hover:scale-105 sm:w-[30vh]">
           <img src={img} className="" />
           <h1 className="font-semibold text-yellow-300 text-3xl md:text-base">

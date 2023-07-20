@@ -13,8 +13,8 @@ const Hero = () => {
   return (
     <div className="selector py-14 min-h-[100vh] md:pt-[12vh] ">
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
-        <div className="flex items-start font-semibold gap-2 ">
-          <div class="h-[12vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-3"></div>
+        <div className="flex items-start font-semibold gap-2">
+          <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-3"></div>
           <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full ">
             <p className="text-2xl text-[#FF7676] font">Na Garam</p>
             <p className="text-2xl text-[#44B0FF] font">Na Thanda</p>
@@ -56,7 +56,7 @@ const Hero = () => {
           </ul>
         </div>
       </div>
-      <div className="flex gap-[20vh] lg:gap-2 justify-around px-[25vh] md:px-0 lg:px-5">
+      <div className="flex gap-[20vh] lg:gap-2 justify-around px-[25vh] md:px-0 xl:px-[10vh]">
         <div className="text-white flex flex-col justify-center md:absolute md:flex-row-reverse top-[12vh] md:w-full md:gap-4 md:bg-[#E0C375] md:h-[6vh] md:items-center">
           <div className="md:flex md:flex-row md:gap-2 mt-[15vh] md:mt-0 md:font-semibold">
             <p className="hero_price_font text-[#F2C652] text-2xl md:text-black text-end md:text-xl">
@@ -69,15 +69,15 @@ const Hero = () => {
           <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-2xl lg:w-[52vh] lg:h-[35vh] border-black "></div>
+          <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-2xl border-black "></div>
           <div className="flex relative">
             <img
               src={error}
-              className="w-[370px] h-auto sm:w-[60vh] drop-shadow-3xl"
+              className="w-[100%] h-auto sm:w-[60vh] drop-shadow-3xl max-w-[60vh]"
             />
             <img
               src={splash}
-              className="w-[30vh] h-auto absolute left-[75%] bottom-[60%] md:w-[10vh] lg:w-[20vh] md:left-[75%] md:bottom-[70%]"
+              className="w-[50%] h-auto absolute left-[75%] bottom-[60%] md:w-[10vh] lg:w-[20vh] md:left-[75%] md:bottom-[70%]"
             />
             <div className="w-[40px] h-[40px] bg-[#E5E5E5C4] rounded-full absolute right-[42%] top-[40%] flex items-center justify-center">
               <BsFillPlayFill className="text-3xl" />

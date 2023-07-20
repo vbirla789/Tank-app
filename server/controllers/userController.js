@@ -2,6 +2,7 @@ import ErrorHandler from "../utils/errorHandler.js";
 import { asyncError } from "../middleware/catchAsyncError.js";
 import { User } from "../models/userModels.js";
 import { sendToken } from "../utils/jwtToken.js";
+import { sendEmail } from "../utils/sendEmail.js";
 
 // REGISTER A USER
 
@@ -44,4 +45,67 @@ export const loginUser = asyncError(async (req, res, next) => {
   }
 
   sendToken(user, 200, res);
+});
+
+// Logout User
+export const Logout = asyncError(async (req, res, next) => {
+  res.cookie("token", null, {
+    expires: new Date(Date.now()),
+    httpOnly: true,
+  });
+
+  res.status(200).json({
+    success: true,
+    message: "Logged out successfully",
+  });
+});
+
+// FORGOT PASSWORD
+
+export const forgetPassword = asyncError(async (req, res, next) => {
+  const user = await User.findOne({ email: req.body.email });
+
+  if (!user) {
+    return next(new ErrorHandler("user not found", 404));
+  }
+
+  // GET RESET PASSWORD TOKEN
+  const resetToken = user.getResetPasswordToken();
+
+  await user.save({ validateBeforeSave: false });
+
+  const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/api/v1/password/reset/${resetToken}`;
+
+  const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\nIf you have not requested this email pls ignore it`;
+
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: `Tank App Password Recovery`,
+      message,
+    });
+    res.status(200).json({
+      success: true,
+      message: `Email sent to ${user.email} successfully`,
+    });
+  } catch (error) {
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save({ validateBeforeSave: false });
+
+    return next(new ErrorHandler(error.message, 500));
+  }
+});
+
+// GET YOUR DETAIL
+export const userDetails = asyncError(async (req, res, next) => {
+  const user = await User.findById(req.user.id);
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
 });
