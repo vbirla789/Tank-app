@@ -73,7 +73,7 @@ const Hero = () => {
           <div className="flex relative">
             <img
               src={error}
-              className="w-[100%] h-auto sm:w-[60vh] drop-shadow-3xl max-w-[60vh]"
+              className="w-[100%] h-auto drop-shadow-3xl max-w-[60vh]"
             />
             <img
               src={splash}
