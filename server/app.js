@@ -1,6 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
 import paymentRoute from "./routes/paymentRoutes.js";
+import userRoute from "./routes/userRoute.js";
 import cors from "cors";
 import productRoute from "./routes/productRoute.js";
 import { Error } from "./middleware/error.js";
@@ -22,6 +23,7 @@ app.get("/api/getkey", (req, res) =>
 // ROUTE EXPORTS
 
 app.use("/api/v1", productRoute);
+app.use("/api/v1", userRoute);
 
 //MIDDLEWARE FOR ERROR
 
