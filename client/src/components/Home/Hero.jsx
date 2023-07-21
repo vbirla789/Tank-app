@@ -15,10 +15,10 @@ const Hero = () => {
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
         <div className="flex items-start font-semibold gap-2">
           <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-3"></div>
-          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full ">
-            <p className="text-2xl text-[#FF7676] font">Na Garam</p>
-            <p className="text-2xl text-[#44B0FF] font">Na Thanda</p>
-            <p className="text-2xl text-[#B0FF4D] font">Sirf Tazaa...</p>
+          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-2xl md:text-xl">
+            <p className=" text-[#FF7676] font">Na Garam</p>
+            <p className=" text-[#44B0FF] font">Na Thanda</p>
+            <p className=" text-[#B0FF4D] font">Sirf Tazaa...</p>
           </div>
         </div>
         <div className="md:mx-auto ">
@@ -34,7 +34,7 @@ const Hero = () => {
             <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] z-10 font-semibold">
               <NavLink to="/product/1">SHOP NOW!</NavLink>
             </button>
-            <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] hidden md:block hero_font font-semibold z-10">
+            <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] hidden md:block hero_font font-semibold z-10 md:text-black hero_bg">
               <Link to="Why" smooth={true} spy={true} offset={-180}>
                 Explore More
               </Link>

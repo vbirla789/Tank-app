@@ -3,6 +3,7 @@ import { asyncError } from "../middleware/catchAsyncError.js";
 import { User } from "../models/userModels.js";
 import { sendToken } from "../utils/jwtToken.js";
 import { sendEmail } from "../utils/sendEmail.js";
+import { Product } from "../models/productModel.js";
 
 // REGISTER A USER
 
@@ -107,5 +108,135 @@ export const userDetails = asyncError(async (req, res, next) => {
   res.status(200).json({
     success: true,
     user,
+  });
+});
+
+// UPDATE USER PROFILE
+
+export const updateProfile = asyncError(async (req, res, next) => {
+  const newUserData = {
+    name: req.body.name,
+    email: req.body.email,
+  };
+
+  // we will add cloudinary later
+
+  const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: true,
+  });
+
+  res.status(200).json({
+    success: true,
+  });
+});
+
+// GET SINGLE USERS (admin)
+
+export const getSingleUser = asyncError(async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+
+  if (!user) {
+    next(new ErrorHandler(`User does not exist with id: ${req.params.id}`));
+  }
+
+  res.status(200).json({
+    success: true,
+    user,
+  });
+});
+
+// GET ALL USERS (admin)
+
+export const getAllUsers = asyncError(async (req, res, next) => {
+  const users = await User.find();
+
+  res.status(200).json({
+    success: true,
+    users,
+  });
+});
+
+// UPDATE USER ROLE --admin
+
+export const updateRole = asyncError(async (req, res, next) => {
+  const newUserData = {
+    name: req.body.name,
+    email: req.body.email,
+    role: req.body.role,
+  };
+
+  const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: true,
+  });
+
+  res.status(200).json({
+    success: true,
+  });
+});
+
+// DELETE USER --admin
+
+export const deleteUser = asyncError(async (req, res, next) => {
+  const user = await User.findByIdAndDelete(req.params.id);
+
+  // we will remove cloudinary later
+
+  if (!user) {
+    return next(new ErrorHandler(`User does not exist with ${req.params.id}`));
+  }
+
+  res.status(200).json({
+    success: true,
+    message: "User deleted successfully",
+  });
+});
+
+export const createProductReview = asyncError(async (req, res, next) => {
+  const { rating, comment, productId } = req.body;
+  const review = {
+    user: req.user._id,
+    name: req.user.name,
+    rating: Number(rating),
+    comment,
+  };
+
+  const product = await Product.findById(productId);
+
+  if (!product) {
+    return res.status(404).json({
+      success: false,
+      message: "Product not found",
+    });
+  }
+
+  const isReviewed = product.reviews.find(
+    (rev) => rev.user.toString() === req.user._id.toString()
+  );
+
+  if (isReviewed) {
+    product.reviews.forEach((rev) => {
+      if (rev.user.toString() === req.user._id.toString())
+        (rev.rating = rating), (rev.comment = comment);
+    });
+  } else {
+    product.reviews.push(review);
+    product.numOfReviews = product.reviews.length;
+  }
+
+  let avg = 0;
+  product.ratings = product.reviews.forEach((rev) => {
+    avg = avg + rev.rating;
+  });
+
+  product.ratings = avg / product.reviews.length;
+
+  await product.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    success: true,
   });
 });

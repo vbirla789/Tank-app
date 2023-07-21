@@ -6,6 +6,7 @@ import cors from "cors";
 import productRoute from "./routes/productRoute.js";
 import { Error } from "./middleware/error.js";
 import cookieParser from "cookie-parser";
+import orderRoute from "./routes/orderRoute.js";
 
 config({ path: "./config/config.env" });
 
@@ -15,16 +16,16 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api", paymentRoute);
-
 app.get("/api/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
 
 // ROUTE EXPORTS
 
+app.use("/api", paymentRoute);
 app.use("/api/v1", productRoute);
 app.use("/api/v1", userRoute);
+app.use("/api/v1", orderRoute);
 
 //MIDDLEWARE FOR ERROR
 
