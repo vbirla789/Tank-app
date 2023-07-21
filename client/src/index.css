@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Pacifico&family=Roboto:wght@100&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,7 +69,7 @@
 }
 
 .font {
-  font-family: "Pacifico", cursive;
+  font-family: Pacifico, cursive;
 }
 
 .hero_font {
@@ -103,4 +106,8 @@
 
 .hero_bg {
   background: linear-gradient(to top, #ffb800, #ffffff);
+}
+
+.about_color {
+  color: var(--hot-red-purple, #fff);
 }

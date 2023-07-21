@@ -27,11 +27,13 @@ const About = () => {
           <div className="bg-[#ffffff26] flex items-center justify-center rounded-[50%]">
             <img
               src={frame1}
-              className="w-[80vh] h-auto mr-5 md:w-[500px] md:mr-3"
+              className="w-[80vh] h-auto mr-5 md:w-[500px] md:mr-3 "
             />
           </div>
           <div className="flex flex-col gap-5">
-            <h className="font-semibold text-4xl lg:text-3xl ">Vission</h>
+            <h className="font-semibold text-4xl lg:text-3xl text-transparent bg-gradient-to-r from-red-400 to-violet-800 bg-clip-text  ">
+              Vission
+            </h>
             <p className=" text-[#fff] text-lg font-semibold md:w-full">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -48,7 +50,9 @@ const About = () => {
             />
           </div>
           <div className="flex flex-col gap-5">
-            <h className="font-semibold text-4xl lg:text-3xl ">Mission</h>
+            <h className="font-semibold text-4xl lg:text-3xl text-transparent bg-gradient-to-r from-[#C9FF84] to-violet-800 bg-clip-text">
+              Mission
+            </h>
             <p className="text-[#fff] text-lg font-semibold md:w-full">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text

@@ -46,49 +46,49 @@ function App() {
               <img
                 src={slide_image_1}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh] rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh] rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_2}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src={slide_image_3}
                 alt="slide_image"
-                className="w-[60vh] h-[75vh] lg:h-[40vh]  rounded-2xl"
+                className="w-[90vh] h-[65vh] lg:h-[30vh]  rounded-lg"
               />
             </SwiperSlide>
 

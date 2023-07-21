@@ -8,15 +8,16 @@ import error from "../../assets/errer.png";
 import splash from "../../assets/splash1 1.png";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
+import roundfont from "../../assets/roundfont.png";
 
 const Hero = () => {
   return (
     <div className="selector py-14 min-h-[100vh] md:pt-[12vh] ">
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
         <div className="flex items-start font-semibold gap-2">
-          <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-3"></div>
-          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-2xl md:text-xl">
-            <p className=" text-[#FF7676] font">Na Garam</p>
+          <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-2"></div>
+          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic">
+            <p className=" text-[#FF7676] font ">Na Garam</p>
             <p className=" text-[#44B0FF] font">Na Thanda</p>
             <p className=" text-[#B0FF4D] font">Sirf Tazaa...</p>
           </div>
@@ -85,14 +86,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex items-center md:hidden">
-          <div
-            className="rounded-[50%] bg-[#DEC482] w-[130px] h-[130px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col"
-            style={{ shapeOutside: "circle()" }}
-          >
-            {/* <p class="text-justify ml-4">
-              Lorem ipsum dolor sit amet, consectetur
-            </p> */}
+        <div className="flex items-center md:hidden relative ">
+          <img src={roundfont} className="absolute w-[160px]" />
+          <div className="rounded-[50%] bg-[#DEC482] w-[150px] h-[150px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col  border-[3vh] border-transparent">
             <h1 className="text-center font-semibold text-2xl md:text-lg hero_font ">
               Explore More
             </h1>
