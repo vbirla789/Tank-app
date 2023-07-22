@@ -115,7 +115,10 @@ const Navbar = () => {
                 </span>
               </div>
             </li>
-            <li className="md:hidden ">Sign up</li>
+            <li className="md:hidden ">
+              {" "}
+              <Link to="signup">Sign up</Link>
+            </li>
           </ul>
         </div>
         <div className="hidden lg:block ">

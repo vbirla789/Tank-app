@@ -14,6 +14,8 @@ import Video from "./utils/Video";
 import PaySuss from "./utils/PaySuss";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Login from "./components/Auth/Login";
+import Signup from "./components/Auth/Signup";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -64,6 +66,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

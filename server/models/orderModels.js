@@ -50,7 +50,7 @@ const orderSchema = new mongoose.Schema({
   ],
   user: {
     type: mongoose.Schema.ObjectId,
-    ref: "user",
+    ref: "User",
     required: true,
   },
   paymentInfo: {
@@ -92,12 +92,11 @@ const orderSchema = new mongoose.Schema({
     required: true,
     default: "Processing",
   },
-
+  deliveredAt: Date,
   createdAt: {
     type: Date,
     default: Date.now,
   },
-  deliveredAt: Date,
 });
 
 export const Order = mongoose.model("Order", orderSchema);
