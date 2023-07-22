@@ -57,7 +57,7 @@ const Hero = () => {
           </ul>
         </div>
       </div>
-      <div className="flex gap-[20vh] lg:gap-2 justify-around px-[25vh] md:px-0 xl:px-[10vh]">
+      <div className="flex lg:gap-2 justify-around px-[25vh] md:px-0 xl:px-[10vh]">
         <div className="text-white flex flex-col justify-center md:absolute md:flex-row-reverse top-[12vh] md:w-full md:gap-4 md:bg-[#E0C375] md:h-[6vh] md:items-center">
           <div className="md:flex md:flex-row md:gap-2 mt-[15vh] md:mt-0 md:font-semibold">
             <p className="hero_price_font text-[#F2C652] text-2xl md:text-black text-end md:text-xl">
@@ -88,9 +88,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex items-center md:hidden">
-          <img src={roundfont} className="absolute w-[180px] right-[5.75%] " />
-          <div className="rounded-[50%] bg-[#DEC482] w-[130px] h-[130px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col">
+        <div className="flex items-center md:hidden relative">
+          <img src={roundfont} className="absolute w-[180px] " />
+          <div className="rounded-[50%] bg-[#DEC482] w-[130px] h-[130px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col ">
             <h1 className="text-center font-semibold text-2xl md:text-lg hero_font ">
               Explore More
             </h1>

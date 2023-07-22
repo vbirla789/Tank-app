@@ -55,7 +55,7 @@ const Navbar = () => {
   const [navState, setNavState] = useState(false);
 
   const onNavScroll = () => {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 60) {
       setNavState(true);
     } else {
       setNavState(false);
@@ -73,11 +73,9 @@ const Navbar = () => {
     <div
       className={`
         ${
-          !navState
-            ? "absolute  w-full flex justify-between items-center navbar px-4"
-            : "fixed w-full flex justify-between items-center  color  px-4  lg:pr-5  blur-xsm"
-        } z-20 lg:h-[12vh] h-[10vh] text-slate-200 
-        
+          !navState ? "absolute navbar " : "fixed color blur-xsm"
+        } z-20 lg:h-[12vh] h-[10vh] text-slate-200  justify-between items-center w-full flex px-4
+        lg:pr-5        
       `}
     >
       <div className="flex gap-2">
