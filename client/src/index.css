@@ -53,6 +53,9 @@
     #71adc1
   );
 }
+.navbar {
+  background: linear-gradient(to right, #1b3748, #2c5567, #71adc1);
+}
 
 .hero {
   color: linear-gradient(90deg, #e0c274 0%, #e6da94 45.84%, #dfc275 100%);

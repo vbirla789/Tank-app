@@ -67,7 +67,9 @@ const Hero = () => {
               ₹ 4999
             </p>
           </div>
-          <p className="font-semibold  text-lg md:text-black">UPTO 50% OFF</p>
+          <p className="font-semibold  lg:text-sm md:text-black text-lg">
+            UPTO 50% OFF
+          </p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
           <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-2xl border-black "></div>
@@ -86,9 +88,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex items-center md:hidden relative ">
-          <img src={roundfont} className="absolute w-[160px]" />
-          <div className="rounded-[50%] bg-[#DEC482] w-[150px] h-[150px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col  border-[3vh] border-transparent">
+        <div className="flex items-center md:hidden">
+          <img src={roundfont} className="absolute w-[180px] right-[5.75%] " />
+          <div className="rounded-[50%] bg-[#DEC482] w-[130px] h-[130px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col">
             <h1 className="text-center font-semibold text-2xl md:text-lg hero_font ">
               Explore More
             </h1>

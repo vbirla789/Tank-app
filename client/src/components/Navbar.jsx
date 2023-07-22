@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
@@ -52,8 +52,34 @@ const Navbar = () => {
     razor.open();
   };
 
+  const [navState, setNavState] = useState(false);
+
+  const onNavScroll = () => {
+    if (window.scrollY > 30) {
+      setNavState(true);
+    } else {
+      setNavState(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onNavScroll);
+    };
+  }, []);
+
   return (
-    <div className="fixed w-full flex justify-between items-center h-[10vh] color text-slate-200 px-4 lg:h-[12vh] lg:pr-5 z-20 blur-xsm">
+    <div
+      className={`
+        ${
+          !navState
+            ? "absolute  w-full flex justify-between items-center navbar px-4"
+            : "fixed w-full flex justify-between items-center  color  px-4  lg:pr-5  blur-xsm"
+        } z-20 lg:h-[12vh] h-[10vh] text-slate-200 
+        
+      `}
+    >
       <div className="flex gap-2">
         <Link to="/">
           <img src={tank} className="w-10 h-auto mt-1 lg:mt-0" />
@@ -62,19 +88,19 @@ const Navbar = () => {
       </div>
       <div className="md:hidden">
         <ul className="flex gap-4 items-center">
-          <li>
+          <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="about">About</Link>
           </li>
-          <li>
+          <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">Product</Link>
           </li>
-          <li>
+          <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">FAQ's</Link>
           </li>
-          <li>
+          <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">Blog</Link>
           </li>
-          <li>
+          <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="contact">Contact</Link>
           </li>
         </ul>
