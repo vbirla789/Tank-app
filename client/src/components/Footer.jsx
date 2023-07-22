@@ -4,9 +4,9 @@ import tank from "../assets/tank-logo.png";
 const Footer = () => {
   return (
     <div className="py-10 bg-[#010C16] text-slate-200 px-10">
-      <div className="flex md:flex-wrap items-center justify-around">
-        <div className="flex flex-row items-center justify-center gap-2">
-          <img src={tank} className="w-[15vh]" />
+      <div className="flex md:flex-wrap items-center justify-around md:gap-8">
+        <div className="flex flex-row items-center justify-center gap-2 sm:gap-4">
+          <img src={tank} className="w-[15vh] sm:w-[10vh]" />
           <h1 className="text-3xl hero_font font-bold w-[30vh] ">
             Water Tank Doctor
           </h1>
@@ -14,7 +14,6 @@ const Footer = () => {
         <div className="flex flex-col">
           <h1 className=" text-lg font-medium">Our Services</h1>
           <span>About us</span>
-          <span>About Product</span>
           <span>Testimonials</span>
           <span>How to Install</span>
           <span>About Warrenty</span>

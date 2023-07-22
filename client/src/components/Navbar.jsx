@@ -55,25 +55,26 @@ const Navbar = () => {
   const [navState, setNavState] = useState(false);
 
   const onNavScroll = () => {
-    if (window.scrollY > 60) {
+    if (window.scrollY >= 80) {
       setNavState(true);
     } else {
       setNavState(false);
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", onNavScroll);
 
     return () => {
       window.removeEventListener("scroll", onNavScroll);
     };
-  }, []);
+  });
 
   return (
     <div
       className={`
         ${
-          !navState ? "absolute navbar " : "fixed color blur-xsm"
+          !navState ? "absolute navbar" : "fixed color blur-xsm"
         } z-20 lg:h-[12vh] h-[10vh] text-slate-200  justify-between items-center w-full flex px-4
         lg:pr-5        
       `}
@@ -92,9 +93,9 @@ const Navbar = () => {
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">Product</Link>
           </li>
-          <li className="hover:underline hover:text-[#FFB82F]">
+          {/* <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">FAQ's</Link>
-          </li>
+          </li> */}
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">Blog</Link>
           </li>

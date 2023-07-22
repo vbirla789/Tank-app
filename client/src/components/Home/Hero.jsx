@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
         <div className="flex items-start font-semibold gap-2">
           <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-2"></div>
-          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic">
+          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic gap-1">
             <p className=" text-[#FF7676] font ">Na Garam</p>
             <p className=" text-[#44B0FF] font">Na Thanda</p>
             <p className=" text-[#B0FF4D] font">Sirf Tazaa...</p>
