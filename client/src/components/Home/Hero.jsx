@@ -25,10 +25,10 @@ const Hero = () => {
           </div>
         </div>
         <div className="md:mx-auto ">
-          <h1 className="text-7xl hero_font font-bold text-[#FFF] md:text-center md:text-5xl drop-shadow-lg">
+          <h1 className="text-6xl hero_font font-bold text-[#FFF] md:text-center md:text-5xl drop-shadow-lg">
             Water Tank
           </h1>
-          <h1 className="text-7xl hero_font font-bold text-[#DEC482] text-center mt-2 md:mb-[12vh] mb-[5vh] md:text-5xl">
+          <h1 className="text-6xl hero_font font-bold text-[#DEC482] text-center mt-2 md:mb-[12vh] mb-[5vh] md:text-5xl">
             Doctor
           </h1>
 
