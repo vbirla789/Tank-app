@@ -32,7 +32,7 @@ const Hero = () => {
             Doctor
           </h1>
 
-          <div className="flex items-center justify-center gap-2 md:mx-2 mt-[15vh]">
+          <div className="flex items-center justify-center gap-2 md:mx-2 md:mt-[15vh]">
             <hr class="w-[10vh] border-t-2  border-[#DDC474] "></hr>
             <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] z-10 font-semibold">
               <NavLink to="/product/1">SHOP NOW!</NavLink>
