@@ -117,7 +117,7 @@ const Navbar = () => {
             </li>
             <li className="md:hidden ">
               {" "}
-              <Link to="signup">Sign up</Link>
+              <Link to="login">Login</Link>
             </li>
           </ul>
         </div>

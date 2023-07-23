@@ -9,7 +9,7 @@ const Login = () => {
     console.log("login form submitted");
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 sm:px-10">
       <div className="w-96 bg-white rounded-lg shadow-lg p-8">
         <h2 className="text-3xl font-semibold mb-4">Login</h2>
         {/* Your login form components */}

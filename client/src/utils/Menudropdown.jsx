@@ -41,7 +41,7 @@ const Menudropdown = ({ isMenuOpen }) => {
       </div>
       <div>
         <button className="rounded-full py-1 px-5 bg-black text-white z-10 font-semibold mt-5">
-          <NavLink to="/product/1">Login</NavLink>
+          <NavLink to="login">Login</NavLink>
         </button>
       </div>
     </nav>

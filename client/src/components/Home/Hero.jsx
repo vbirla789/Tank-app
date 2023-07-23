@@ -45,7 +45,7 @@ const Hero = () => {
             <hr class="w-[10vh] border-t-2  border-yellow-300"></hr>
           </div>
         </div>
-        <div className="bg-[#30303066] h-auto rounded-[27px] px-2 py-4 md:absolute right-2 top-[93vh]">
+        <div className="bg-[#30303066] h-auto rounded-[27px] px-2 py-4 md:absolute right-1 top-[90vh]">
           <ul className="flex flex-col items-center gap-4 justify-center links">
             <li className="duration-500 ease-in-out hover:scale-110">
               <i class="fa fa-facebook" aria-hidden="true"></i>
