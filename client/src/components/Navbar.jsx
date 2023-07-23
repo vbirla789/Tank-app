@@ -86,7 +86,7 @@ const Navbar = () => {
         <p className="w-[50%] lg:text-sm">Water Tank Doctor</p>
       </div>
       <div className="md:hidden">
-        <ul className="flex gap-4 items-center">
+        <ul className="flex gap-8 items-center  text-lg">
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="about">About</Link>
           </li>
@@ -109,15 +109,19 @@ const Navbar = () => {
           <ul className="flex items-center gap-4">
             <li>
               <div onClick={() => setOpen(!open)} className="relative pt-2">
-                <AiOutlineShoppingCart className="text-2xl" />
+                <AiOutlineShoppingCart className="text-2xl hover:underline hover:text-[#FFB82F]" />
                 <span className="absolute top-0 left-3 text-white rounded-full bg-slate-600 h-[15px] w-[15px] flex items-center justify-center text-xs">
                   {products.length}
                 </span>
               </div>
             </li>
-            <li className="md:hidden ">
+            <li className="md:hidden mt-1">
               {" "}
-              <Link to="login">Login</Link>
+              <button className="border-2 border-slate-200 py-0.5 px-4 text-slate-200 z-10 font-semibold rounded-full">
+                <Link to="login" className=" hover:text-[#FFB82F]">
+                  Login
+                </Link>
+              </button>
             </li>
           </ul>
         </div>

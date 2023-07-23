@@ -20,23 +20,33 @@ const Menudropdown = ({ isMenuOpen }) => {
       </div> */}
 
       <div>
-        <Link to="about">About</Link>
+        <Link to="about" className="hover:underline hover:text-[#FFB82F]">
+          About
+        </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="product/2">Product</Link>
+        <Link to="product/2" className="hover:underline hover:text-[#FFB82F]">
+          Product
+        </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="product/1">FAQ's</Link>
+        <Link to="product/1" className="hover:underline hover:text-[#FFB82F]">
+          FAQ's
+        </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="product/2">Blog</Link>
+        <Link to="product/2" className="hover:underline hover:text-[#FFB82F]">
+          Blog
+        </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="contact">Contact</Link>
+        <Link to="contact" className="hover:underline hover:text-[#FFB82F]">
+          Contact
+        </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
