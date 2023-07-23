@@ -9,13 +9,15 @@ import splash from "../../assets/splash1 1.png";
 import { Link } from "react-scroll";
 import { NavLink } from "react-router-dom";
 import roundfont from "../../assets/roundfont.png";
+import ellipse from "../../assets/Ellipse 7.png";
+import "./Hero.css";
 
 const Hero = () => {
   return (
     <div className="selector py-14 min-h-[100vh] md:pt-[12vh] ">
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
         <div className="flex items-start font-semibold gap-2">
-          <div class="h-[8vh] xl:h-[12vh] lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-2"></div>
+          <div class="h-[10vh]  lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-4"></div>
           <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic gap-1">
             <p className=" text-[#FF7676] font ">Na Garam</p>
             <p className=" text-[#44B0FF] font">Na Thanda</p>
@@ -43,15 +45,27 @@ const Hero = () => {
             <hr class="w-[10vh] border-t-2  border-yellow-300"></hr>
           </div>
         </div>
-        <div className="bg-[#30303066] h-auto rounded-[27px] px-2 py-4 md:absolute right-2 top-[90vh]">
-          <ul className="flex flex-col items-center gap-4 justify-center">
+        <div className="bg-[#30303066] h-auto rounded-[27px] px-2 py-4 md:absolute right-2 top-[93vh]">
+          <ul className="flex flex-col items-center gap-4 justify-center links">
             <li className="duration-500 ease-in-out hover:scale-110">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <div class="slider">
+                <p>intagram</p>
+              </div>
               <img src={insta} className="w-8 h-8" />
             </li>
             <li className="duration-500 ease-in-out hover:scale-110">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <div class="slider">
+                <p>whatsapp</p>
+              </div>
               <img src={whats} className="w-8 h-8" />
             </li>
             <li className="duration-500 ease-in-out hover:scale-110">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <div class="slider">
+                <p>mail</p>
+              </div>
               <img src={mail} className="w-8 h-8" />
             </li>
           </ul>
@@ -72,7 +86,11 @@ const Hero = () => {
           </p>
         </div>
         <div className="ml-[15vh] md:ml-0 z-5 md:mt-10 relative">
-          <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-2xl border-black "></div>
+          {/* <div className="h-[70%] w-[80%] rounded-full bg-[#FFFFFFBA] absolute top-[50%] left-[10%] sm:left-[12%] sm:w-[280px] sm:h-[200px] drop-shadow-2xl border-black "></div> */}
+          <img
+            src={ellipse}
+            className="absolute top-[70%] drop-shadow-4xl sm:w-[80%] sm:left-[10%]"
+          />
           <div className="flex relative">
             <img
               src={error}
