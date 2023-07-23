@@ -18,21 +18,21 @@ const Hero = () => {
       <div className="flex justify-between items-end md:px-0 px-[12vh] md:gap-x-0">
         <div className="flex items-start font-semibold gap-2">
           <div class="h-[10vh]  lg:h-[8vh] border-l-2 border-[#BDBDBD] align-center md:hidden mt-4"></div>
-          <div className="flex flex-col h-full md:flex-row md:absolute top-[41vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic gap-1">
+          <div className="flex flex-col h-full md:flex-row md:absolute top-[45vh] sm:top-[40vh] md:gap-2 md:justify-center w-full  text-xl md:text-xl italic gap-1">
             <p className=" text-[#FF7676] font ">Na Garam</p>
             <p className=" text-[#44B0FF] font">Na Thanda</p>
             <p className=" text-[#B0FF4D] font">Sirf Tazaa...</p>
           </div>
         </div>
         <div className="md:mx-auto ">
-          <h1 className="text-7xl hero_font font-bold text-[#FFF] md:text-center md:text-6xl">
+          <h1 className="text-7xl hero_font font-bold text-[#FFF] md:text-center md:text-5xl drop-shadow-lg">
             Water Tank
           </h1>
-          <h1 className="text-7xl hero_font font-bold text-[#DEC482] text-center mt-2 md:mb-[12vh] mb-[5vh] md:text-6xl">
+          <h1 className="text-7xl hero_font font-bold text-[#DEC482] text-center mt-2 md:mb-[12vh] mb-[5vh] md:text-5xl">
             Doctor
           </h1>
 
-          <div className="flex items-center justify-center gap-2 md:mx-2">
+          <div className="flex items-center justify-center gap-2 md:mx-2 mt-[15vh]">
             <hr class="w-[10vh] border-t-2  border-[#DDC474] "></hr>
             <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] z-10 font-semibold">
               <NavLink to="/product/1">SHOP NOW!</NavLink>

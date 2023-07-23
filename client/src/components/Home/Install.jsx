@@ -12,9 +12,11 @@ const Install = () => {
           <img src={img1} className="rounded-xl h-auto" />
         </div>
         <div className="p-5 flex items-center flex-col justify-center">
-          <p className="text-2xl w-[80%] lg:w-[90%] font-semibold lg:text-xl text-[#fff]">
-            We would love to hear about what is right but also about what we can
-            improve for better services.
+          <p className="text-xl w-[80%] lg:w-[90%] font-semibold lg:text-xl text-[#fff]">
+            Installing our jacket is a breeze with our user-friendly
+            Do-It-Yourself (DIY) design, suitable for any new or existing water
+            tank. No more worries about lost tank lids or covers, as our jacket
+            fits perfectly and secures your water reservoir.
           </p>
           <button className="bg-violet-600 lg:py-1 lg:px-3 rounded-md mt-10 text-white px-8 py-2 text-xl lg:text-lg">
             Read more

@@ -10,7 +10,7 @@ import DotLoader from "react-spinners/DotLoader";
 const id = 1;
 const img =
   "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67";
-const title = "EXTREME COVER| 750 litre";
+const title = "Water Tank Jacket";
 const price = 1000;
 const cartQuantity = 1;
 
@@ -88,7 +88,7 @@ const Product = ({ images, items }) => {
           <div className="px-6 flex flex-col bg-blue-100 rounded-xl py-10 lg:w-[80%] mx-auto w-[50%] my-10">
             <h2 className="text-2xl font-semibold mb-5">{title}</h2>
             <p className="mb-5 text-xl font-sans">
-              M.R.P<span> ${price}</span>
+              M.R.P<span> ₹{price}</span>
             </p>
             <h1 className="mb-1 text-lg">Description</h1>
             <p className="text-gray-600 mb-4">

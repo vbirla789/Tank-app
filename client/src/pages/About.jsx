@@ -12,10 +12,11 @@ const About = () => {
         </h1>
         <div className="flex md:flex-col-reverse justify-between items-center w-full">
           <p className="text-[#fff] inline-block align-top mb-4 md:mb-0 font-semibold text-lg md:w-[100%] md:mt-10 w-1/2">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scramled it to make a type specimen book.
+            Welcome to Water Tank Doctor, where we proudly present India's First
+            - an extraordinary outdoor water tank jacket crafted with advanced
+            American technology and top-quality European materials. Inspired by
+            ancient wisdom from Feng Shui and Vastu Shastra, our innovative
+            design aims to create a harmonious environment for you.
           </p>
 
           <img src={img} className="w-[70vh] rounded-lg h-[40vh] sm:h-[20vh]" />
@@ -35,10 +36,11 @@ const About = () => {
               Vission
             </h>
             <p className=" text-[#fff] text-lg font-semibold md:w-full">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scramled it to make a type specimen book.
+              At Water Tank Doctor, our goal is to make your water tank last
+              longer and keep the water fresh. We protect your underground water
+              from harmful UV rays, insects, and other things that can spoil it.
+              Our solutions are designed to preserve the natural properties of
+              your water while ensuring its cleanliness.
             </p>
           </div>
         </div>
@@ -54,10 +56,12 @@ const About = () => {
               Mission
             </h>
             <p className="text-[#fff] text-lg font-semibold md:w-full">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scramled it to make a type specimen book.
+              Our mission is to redefine your water tank experience with
+              innovation, durability, and care. Choose Water Tank Doctor and
+              discover the transformative difference it brings to your water
+              storage. Embrace the peace of mind that comes with safeguarding
+              your valuable resource. Together, let's make a positive change
+              with Water Tank Doctor!
             </p>
           </div>
         </div>

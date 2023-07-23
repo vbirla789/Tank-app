@@ -93,12 +93,12 @@ const Navbar = () => {
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">Product</Link>
           </li>
-          {/* <li className="hover:underline hover:text-[#FFB82F]">
-            <Link to="product/1">FAQ's</Link>
-          </li> */}
           <li className="hover:underline hover:text-[#FFB82F]">
-            <Link to="product/1">Blog</Link>
+            <Link to="product/1">FAQ's</Link>
           </li>
+          {/* <li className="hover:underline hover:text-[#FFB82F]">
+            <Link to="product/1">Blog</Link>
+          </li> */}
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="contact">Contact</Link>
           </li>
