@@ -74,14 +74,14 @@ const Hero = () => {
       <div className="flex lg:gap-2 justify-around px-[25vh] md:px-0 xl:px-[10vh]">
         <div className="text-white flex flex-col justify-center md:absolute md:flex-row-reverse top-[12vh] md:w-full md:gap-4 md:bg-[#E0C375] md:h-[6vh] md:items-center">
           <div className="md:flex md:flex-row md:gap-2 mt-[15vh] md:mt-0 md:font-semibold">
-            <p className="hero_price_font text-[#F2C652] text-2xl md:text-black text-end md:text-xl">
+            <p className="hero_price_font text-[#F2C652] text-3xl md:text-black text-end md:text-xl">
               ₹ 2999
             </p>
-            <p className="hero_price_font line-through text-[#ACA5A5] text-lg text-end">
+            <p className="hero_price_font line-through text-[#ACA5A5] text-xl text-end md:text-lg">
               ₹ 4999
             </p>
           </div>
-          <p className="font-semibold  lg:text-sm md:text-black text-lg">
+          <p className="font-semibold  lg:text-base md:text-black text-lg">
             UPTO 50% OFF
           </p>
         </div>
@@ -109,7 +109,7 @@ const Hero = () => {
         <div className="flex items-center md:hidden relative">
           <img src={roundfont} className="absolute w-[180px] " />
           <div className="rounded-[50%] bg-[#DEC482] w-[130px] h-[130px] md:w-[110px] md:h-[110px] flex justify-center items-center flex-col ">
-            <h1 className="text-center font-semibold text-2xl md:text-lg hero_font ">
+            <h1 className="text-center font-semibold text-xl md:text-lg hero_font ">
               Explore More
             </h1>
             <span>
