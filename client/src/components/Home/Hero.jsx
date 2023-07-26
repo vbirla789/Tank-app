@@ -34,7 +34,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center gap-2 md:mx-2 md:mt-[15vh]">
             <hr class="w-[10vh] border-t-2  border-[#DDC474] "></hr>
-            <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] z-10 font-semibold">
+            <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] z-10 font-semibold ">
               <NavLink to="/product/1">SHOP NOW!</NavLink>
             </button>
             <button className="rounded-full border-2 border-[#DDC474] py-1 px-4 text-[#DDC474] hidden md:block hero_font font-semibold z-10 md:text-black hero_bg">

@@ -28,7 +28,7 @@ const About = () => {
           <div className="bg-[#ffffff26] flex items-center justify-center rounded-[50%]">
             <img
               src={frame1}
-              className="w-[80vh] h-auto mr-5 md:w-[500px] md:mr-3 "
+              className="w-[80vh] h-auto mr-5 md:w-[500px] sm:ml-3"
             />
           </div>
           <div className="flex flex-col gap-5">
@@ -48,7 +48,7 @@ const About = () => {
           <div className="bg-[#ffffff26] flex items-center justify-center rounded-[50%]">
             <img
               src={frame2}
-              className="w-[80vh] h-auto mr-4 md:w-[500px] md:mr-2"
+              className="w-[80vh] h-auto mr-4 md:w-[500px] md:ml-3"
             />
           </div>
           <div className="flex flex-col gap-5">
