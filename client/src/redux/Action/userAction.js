@@ -13,6 +13,7 @@ import {
 
 import axios from "axios";
 
+// login
 export const login = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: LOGIN_REQUEST });
@@ -34,6 +35,7 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
+// register
 export const register = (userData) => async (dispatch) => {
   try {
     dispatch({ type: REGISTER_REQUEST });
