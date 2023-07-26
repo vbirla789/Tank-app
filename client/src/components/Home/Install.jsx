@@ -8,10 +8,10 @@ const Install = () => {
         How to Install
       </h1>
       <div className="flex lg:flex-col">
-        <div className="p-5">
+        <div className="p-5 w-1/2 lg:w-full">
           <img src={img1} className="rounded-xl h-auto" />
         </div>
-        <div className="p-5 flex items-center flex-col justify-center">
+        <div className="p-5 flex items-center flex-col justify-center w-1/2 lg:w-full">
           <p className="text-xl w-[80%] lg:w-[90%] font-semibold lg:text-xl text-[#fff]">
             Installing our jacket is a breeze with our user-friendly
             Do-It-Yourself (DIY) design, suitable for any new or existing water

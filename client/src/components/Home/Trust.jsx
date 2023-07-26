@@ -10,7 +10,7 @@ const Trust = () => {
       <div className="flex md:flex-col-reverse">
         <div className="p-5 flex items-center">
           {" "}
-          <img src={img1} className="w-[80vh] rounded-xl " />
+          <div className="w-[80vh] h-[40vh] rounded-xl bg-white"></div>
         </div>
         <div className="p-5 flex items-center sm:justify-center mx-auto">
           {" "}

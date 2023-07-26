@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
 import Img from "../utils/Img";
 
@@ -16,6 +16,12 @@ import {
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import More from "../utils/More";
 
+import {
+  removeItem,
+  setDecreaseItemQTY,
+  setIncreaseItemQTY,
+} from "../redux/cartReducer";
+
 const id = 1;
 const img =
   "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67";
@@ -23,15 +29,40 @@ const title = "Water Tank Jacket | 750 litre";
 const price = 1000;
 const cartQuantity = 1;
 
-const Product = ({ images, items }) => {
+const Product = ({ images }) => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.cart.products);
+  const onIcreaseItemQTY = () => {
+    dispatch(
+      setIncreaseItemQTY({
+        id,
+        title,
+        img,
+        price,
+        cartQuantity,
+      })
+    );
+  };
+  const onDecreaseItemQTY = () => {
+    dispatch(
+      setDecreaseItemQTY({
+        id,
+        title,
+        img,
+        price,
+        cartQuantity,
+      })
+    );
+  };
+
   const [loading, setLoading] = useState(false);
   const [more, setMore] = useState(false);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    });
-  }, [3000]);
+    }, 2000);
+  }, []);
 
   const splideOptions = {
     perPage: 1,
@@ -50,24 +81,6 @@ const Product = ({ images, items }) => {
       425: { perPage: 1 },
     },
   };
-  // const reviewsOptions = {
-  //   perPage: 2.5,
-  //   perMove: 1,
-  //   type: "loop",
-  //   rewind: true,
-  //   keyboard: "global",
-  //   gap: "1rem",
-  //   pagination: false,
-  //   padding: "2rem",
-  //   breakpoints: {
-  //     1200: { perPage: 3 },
-  //     991: { perPage: 2 },
-  //     768: { perPage: 1 },
-  //     500: { perPage: 1 },
-  //     425: { perPage: 1 },
-  //   },
-  // };
-  const dispatch = useDispatch();
 
   const addCart = () => {
     const item = { id, img, title, price, cartQuantity };
@@ -152,12 +165,14 @@ const Product = ({ images, items }) => {
                       >
                         <MinusIcon
                           className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2] "
-                          onClick=""
+                          onClick={onDecreaseItemQTY}
                         />
                       </button>
-                      <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center text-sm">
-                        1
-                      </div>
+                      {products.map((val) => (
+                        <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center text-sm">
+                          {val.cartQuantity}
+                        </div>
+                      ))}
 
                       <button
                         type="button"
@@ -165,7 +180,7 @@ const Product = ({ images, items }) => {
                       >
                         <PlusIcon
                           className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]"
-                          onClick=""
+                          onClick={onIcreaseItemQTY}
                         />
                       </button>
                     </div>
