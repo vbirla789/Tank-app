@@ -1,13 +1,36 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { clearErrors, login } from "../../redux/Action/userAction";
+// import { useAlert } from "react-alert";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  // const alert = useAlert();
+  const navigate = useNavigate();
+  const { error, loading, isAuthenticated } = useSelector(
+    (state) => state.user
+  );
+
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
-  const loginUser = () => {
-    console.log("login form submitted");
+  const loginUser = (e) => {
+    e.preventDefault();
+    dispatch(login(loginEmail, loginPassword));
   };
+
+  useEffect(() => {
+    // if (error) {
+    //   alert.error(error);
+    //   dispatch(clearErrors());
+    // }
+
+    if (isAuthenticated) {
+      navigate("/home");
+    }
+  }, [dispatch, isAuthenticated]);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 sm:px-10">
       <div className="w-96 bg-white rounded-lg shadow-lg p-8">
@@ -52,7 +75,7 @@ const Login = () => {
           <button
             type="submit"
             className="w-full mt-4 p-2 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-300 ease-in-out"
-            onClick={() => loginUser()}
+            onClick={loginUser}
           >
             Login
           </button>

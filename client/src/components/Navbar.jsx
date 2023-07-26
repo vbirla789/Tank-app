@@ -80,7 +80,7 @@ const Navbar = () => {
       `}
     >
       <div className="flex gap-2">
-        <Link to="/">
+        <Link to="/home">
           <img src={tank} className="w-10 h-auto mt-1 lg:mt-0" />
         </Link>
         <p className="w-[50%] lg:text-sm">Water Tank Doctor</p>

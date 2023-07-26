@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
+import { loadUser } from "./redux/Action/userAction";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,8 @@ const Layout = () => {
     setTimeout(() => {
       setLoading(false);
     }, 4000);
+
+    store.dispatch(loadUser());
   }, []);
   return (
     <div className="app">
@@ -48,7 +51,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Home />,
       },
       {

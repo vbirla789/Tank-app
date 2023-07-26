@@ -13,7 +13,8 @@ import {
   TrashIcon,
 } from "@heroicons/react/24/solid";
 
-import { AiOutlineDown } from "react-icons/ai";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import More from "../utils/More";
 
 const id = 1;
 const img =
@@ -24,13 +25,13 @@ const cartQuantity = 1;
 
 const Product = ({ images, items }) => {
   const [loading, setLoading] = useState(false);
-
+  const [more, setMore] = useState(false);
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     });
-  }, []);
+  }, [3000]);
 
   const splideOptions = {
     perPage: 1,
@@ -171,11 +172,11 @@ const Product = ({ images, items }) => {
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-4 mb-10">
-                  <button className="rounded-full py-1 w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg">
+                  <button className="rounded-full py-[6px] w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg">
                     BUY NOW
                   </button>
                   <button
-                    className="rounded-full border-2 border-black py-1 w-[50%] text-black font-semibold z-10 drop-shadow-lg"
+                    className="rounded-full border-2 border-black py-[6px] w-[50%] text-black font-semibold z-10 drop-shadow-lg"
                     onClick={addCart}
                   >
                     ADD TO CART
@@ -186,15 +187,15 @@ const Product = ({ images, items }) => {
                   className="flex items-center justify-center text-black text-lg flex-col
               "
                 >
-                  <div className="flex gap-[10vh] ">
+                  <div className="flex items-center gap-[10vh]">
                     <p className="font-bold text-start">Colour: </p>
                     <span className="font-semibold">Blue</span>
                   </div>
-                  <div className="flex gap-[10vh] ">
+                  <div className="flex gap-[10vh]">
                     <p className="font-bold text-start">Finish Type: </p>
                     <span className="font-semibold">Satin</span>
                   </div>
-                  <div className="flex gap-[10vh] ">
+                  <div className="flex gap-[10vh]">
                     <p className="font-bold text-start">Item Volume: </p>
                     <span className="font-semibold">750 litre</span>
                   </div>
@@ -252,10 +253,18 @@ const Product = ({ images, items }) => {
           waste time and energy.
         </p>
         <div className="flex items-center justify-center flex-col mt-5">
-          <button className="px-10 py-1 rounded-full bg-[#3A89FF] text-[#fff] text-center ">
+          <button
+            className="px-10 py-1 rounded-full bg-[#3A89FF] text-[#fff] text-center"
+            onClick={() => setMore(!more)}
+          >
             More Info
           </button>
-          <AiOutlineDown className="text-xl " />
+          {more ? <More /> : ""}
+          {more ? (
+            <AiOutlineUp className="text-xl" />
+          ) : (
+            <AiOutlineDown className="text-xl " />
+          )}
         </div>
         <hr class="h-[2px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full my-4 px-5 "></hr>
       </div>
