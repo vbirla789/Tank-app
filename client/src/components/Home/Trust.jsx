@@ -10,7 +10,7 @@ const Trust = () => {
       <div className="flex md:flex-col-reverse">
         <div className="p-5 flex items-center">
           {" "}
-          <div className="w-[80vh] h-[40vh] rounded-xl bg-white"></div>
+          <div className="sm:w-[40vh] sm:h-[22vh] w-[80vh] h-[40vh] rounded-xl bg-white "></div>
         </div>
         <div className="p-5 flex items-center sm:justify-center mx-auto">
           {" "}

@@ -31,29 +31,29 @@ const cartQuantity = 1;
 
 const Product = ({ images }) => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.cart.products);
-  const onIcreaseItemQTY = () => {
-    dispatch(
-      setIncreaseItemQTY({
-        id,
-        title,
-        img,
-        price,
-        cartQuantity,
-      })
-    );
-  };
-  const onDecreaseItemQTY = () => {
-    dispatch(
-      setDecreaseItemQTY({
-        id,
-        title,
-        img,
-        price,
-        cartQuantity,
-      })
-    );
-  };
+  // const products = useSelector((state) => state.cart.products);
+  // const onIcreaseItemQTY = () => {
+  //   dispatch(
+  //     setIncreaseItemQTY({
+  //       id,
+  //       title,
+  //       img,
+  //       price,
+  //       cartQuantity,
+  //     })
+  //   );
+  // };
+  // const onDecreaseItemQTY = () => {
+  //   dispatch(
+  //     setDecreaseItemQTY({
+  //       id,
+  //       title,
+  //       img,
+  //       price,
+  //       cartQuantity,
+  //     })
+  //   );
+  // };
 
   const [loading, setLoading] = useState(false);
   const [more, setMore] = useState(false);
@@ -87,7 +87,7 @@ const Product = ({ images }) => {
     dispatch(addToCart(item));
   };
   return (
-    <div className="min-h-[300vh]">
+    <div className="">
       <div className="flex justify-center items-center pt-[15vh] flex-col">
         {loading ? (
           <DotLoader
@@ -154,7 +154,7 @@ const Product = ({ images }) => {
               <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full mb-4 "></hr>
 
               <div className="bg-blue-100 rounded-xl py-8 mx-auto px-6 w-full">
-                <div className="flex items-center mb-10 justify-center">
+                {/* <div className="flex items-center mb-10 justify-center">
                   <div className="flex gap-5">
                     {" "}
                     <h1 className="font-semibold ">Quantity :</h1>
@@ -185,7 +185,7 @@ const Product = ({ images }) => {
                       </button>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <div className="flex items-center justify-center gap-4 mb-10">
                   <button className="rounded-full py-[6px] w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg">
                     BUY NOW
