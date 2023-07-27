@@ -6,6 +6,8 @@ import {
   LOGIN_FAIL,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT_FAIL,
+  LOGOUT_SUCCESS,
   REGISTER_FAIL,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
@@ -67,6 +69,20 @@ export const loadUser = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: LOAD_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+// LOGOUT USER
+export const logout = () => async (dispatch) => {
+  try {
+    await axios.post("http://localhost:3000/api/v1/logout");
+
+    dispatch({ type: LOGOUT_SUCCESS });
+  } catch (error) {
+    dispatch({
+      type: LOGOUT_FAIL,
       payload: error.response.data.message,
     });
   }

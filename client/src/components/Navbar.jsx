@@ -5,12 +5,16 @@ import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import Menudropdown from "../utils/Menudropdown";
 import Cart from "../utils/Cart";
 import tank from "../assets/tank-logo.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import img from "../assets/WhatsApp Image 2023-06-26 at 2.33 1.png";
 
+import { CgProfile } from "react-icons/cg";
+import Profile from "../utils/Profile";
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [prof, setProf] = useState(false);
 
   const products = useSelector((state) => state.cart.products);
 
@@ -19,11 +23,11 @@ const Navbar = () => {
   const checkoutHandler = async (totalAmount) => {
     const {
       data: { key },
-    } = await axios.get("http://localhost:4000/api/getkey");
+    } = await axios.get("http://localhost:3000/api/getkey");
 
     const {
       data: { order },
-    } = await axios.post("http://localhost:4000/api/checkout", {
+    } = await axios.post("http://localhost:3000/api/checkout", {
       totalAmount,
     });
     // console.log(key);
@@ -104,11 +108,14 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="lg:flex lg:justify-between gap-4">
+      <div className="lg:flex gap-4">
         <div>
           <ul className="flex items-center gap-4">
             <li>
-              <div onClick={() => setOpen(!open)} className="relative pt-2">
+              <div
+                onClick={() => setOpen(!open)}
+                className="relative pt-2 lg:mb-2"
+              >
                 <AiOutlineShoppingCart className="text-2xl hover:underline hover:text-[#FFB82F]" />
                 <span className="absolute top-0 left-3 text-white rounded-full bg-slate-600 h-[15px] w-[15px] flex items-center justify-center text-xs">
                   {products.length}
@@ -122,6 +129,15 @@ const Navbar = () => {
                   Login
                 </Link>
               </button>
+            </li>
+            <li>
+              <button
+                className="z-10 mt-2 lg:mt-1"
+                onClick={() => setProf(!prof)}
+              >
+                <CgProfile className="text-3xl hover:underline hover:text-[#FFB82F]" />
+              </button>
+              {prof && <Profile />}
             </li>
           </ul>
         </div>
@@ -141,10 +157,21 @@ const Navbar = () => {
         </div>
       </div>
       {open && <Cart checkoutHandler={checkoutHandler} />}
+
       {open ? (
         <div className="absolute top-4 right-[35%] md:right-[10%] color rounded-[50%] p-2 opacity-90">
           <RxCross1
             onClick={() => setOpen(!open)}
+            className="text-white text-3xl mt-1  z-30 "
+          />
+        </div>
+      ) : (
+        ""
+      )}
+      {prof ? (
+        <div className="absolute top-5 right-[5%] color rounded-[50%] p-2 opacity-90">
+          <RxCross1
+            onClick={() => setProf(!prof)}
             className="text-white text-3xl mt-1  z-30 "
           />
         </div>

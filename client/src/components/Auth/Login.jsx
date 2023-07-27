@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, login } from "../../redux/Action/userAction";
 // import { useAlert } from "react-alert";
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const alert = useAlert();
+
   const navigate = useNavigate();
   const { error, loading, isAuthenticated } = useSelector(
     (state) => state.user
@@ -21,11 +21,6 @@ const Login = () => {
   };
 
   useEffect(() => {
-    // if (error) {
-    //   alert.error(error);
-    //   dispatch(clearErrors());
-    // }
-
     if (isAuthenticated) {
       navigate("/");
     }
@@ -78,6 +73,12 @@ const Login = () => {
             onClick={loginUser}
           >
             Login
+          </button>
+          <button
+            type="submit"
+            className="w-full mt-4 p-2 rounded-lg bg-blue-500 text-white font-semibold hover:bg-blue-600 transition duration-300 ease-in-out"
+          >
+            <NavLink to="/signup">Signup</NavLink>
           </button>
         </form>
       </div>

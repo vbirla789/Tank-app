@@ -219,7 +219,7 @@ const Product = ({ images }) => {
 
                 <div className="font-semibold">
                   <h1 className="font-semibold mt-10 mb-5 ">About This Item</h1>
-                  <p classname="">
+                  <p className="">
                     • India’s 1st; Vastu Shastra based Water Tank Insulated
                     Jacket. No More Extreme Hot Water in the Soaring Summer’s
                     .No More Cold Water in the Harsh Cold Winter’s{" "}
@@ -268,13 +268,14 @@ const Product = ({ images }) => {
           waste time and energy.
         </p>
         <div className="flex items-center justify-center flex-col mt-5">
+          {more ? <More /> : ""}
           <button
             className="px-10 py-1 rounded-full bg-[#3A89FF] text-[#fff] text-center"
             onClick={() => setMore(!more)}
           >
             More Info
           </button>
-          {more ? <More /> : ""}
+
           {more ? (
             <AiOutlineUp className="text-xl" />
           ) : (

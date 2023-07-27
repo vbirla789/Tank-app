@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import { loadUser } from "./redux/Action/userAction";
+import User from "./utils/profile/User";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);

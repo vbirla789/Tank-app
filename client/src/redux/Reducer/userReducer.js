@@ -6,6 +6,8 @@ import {
   LOGIN_FAIL,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  LOGOUT_FAIL,
+  LOGOUT_SUCCESS,
   REGISTER_FAIL,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
@@ -29,6 +31,12 @@ const userReducer = (state = { user: {}, error: null }, action) => {
         isAuthenticated: true,
         user: action.payload,
       };
+    case LOGOUT_SUCCESS:
+      return {
+        loading: false,
+        user: null,
+        isAuthenticated: false,
+      };
     case LOGIN_FAIL:
     case REGISTER_FAIL:
       return {
@@ -45,6 +53,12 @@ const userReducer = (state = { user: {}, error: null }, action) => {
         loading: false,
         isAuthenticated: false,
         user: null,
+        error: action.payload,
+      };
+    case LOGOUT_FAIL:
+      return {
+        ...state,
+        loading: false,
         error: action.payload,
       };
     case CLEAR_ERRORS:
