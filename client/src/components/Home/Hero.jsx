@@ -42,7 +42,7 @@ const Hero = () => {
                 Explore More
               </Link>
             </button>
-            <hr class="w-[10vh] border-t-2  border-yellow-300"></hr>
+            <hr className="w-[10vh] border-t-2  border-yellow-300"></hr>
           </div>
         </div>
         <div className="bg-[#30303066] h-auto rounded-[27px] px-2 py-4 md:absolute right-1 top-[90vh]">

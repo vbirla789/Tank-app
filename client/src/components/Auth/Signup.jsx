@@ -19,8 +19,6 @@ const Signup = () => {
 
   const { name, email, password } = user;
 
-  // console.log(name, email, password);
-
   const registerSubmit = (e) => {
     e.preventDefault();
 

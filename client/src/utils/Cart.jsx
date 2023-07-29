@@ -4,18 +4,49 @@ import CartItems from "./CartItems";
 import { getTotals } from "../redux/cartReducer";
 
 import { BsFillCartDashFill } from "react-icons/bs";
+import { useNavigate } from "react-router";
+import { clearErrors, createOrder } from "../redux/Action/orderAction";
 
 const Cart = ({ checkoutHandler }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const products = useSelector((state) => state.cart.products);
+  const shippingInfo = useSelector((state) => state.cart.shippingInfo);
+  const { error } = useSelector((state) => state.newOrder);
+
+  const { user, loading, isAuthenticated } = useSelector((state) => state.user);
 
   const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
 
-  // console.log(products);
+  const order = {
+    shippingInfo,
+    orderItems: products,
+    itemsPrice: totalAmount,
+    taxPrice: 1000,
+    shippingPrice: 1000,
+    totalPrice: 3000,
+  };
+
+  // console.log(order);
+
+  const handleCheckout = () => {
+    if (isAuthenticated) {
+      checkoutHandler(totalAmount);
+      // dispatch(createOrder(order));
+    } else {
+      navigate("/login");
+    }
+  };
 
   useEffect(() => {
+    if (error) {
+      // alert.error(error);
+      dispatch(clearErrors());
+    }
+
     dispatch(getTotals());
-  }, [products, dispatch]);
+  }, [products, dispatch, alert, error]);
 
   return (
     <nav
@@ -39,7 +70,7 @@ const Cart = ({ checkoutHandler }) => {
           <div className="flex w-full ">
             <button
               className="bg-slate-900 text-white px-8 py-1 mb-0 mt-5 rounded-full mx-auto"
-              onClick={() => checkoutHandler(totalAmount)}
+              onClick={handleCheckout}
             >
               Checkout
             </button>

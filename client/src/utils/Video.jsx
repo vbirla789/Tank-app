@@ -8,7 +8,6 @@ const Video = () => {
         autoPlay={true}
         loop={true}
         muted={true}
-        playInline={true}
         className="h-full w-full object-cover"
       >
         <source type="video/mp4" src={video} />

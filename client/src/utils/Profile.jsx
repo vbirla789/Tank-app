@@ -35,7 +35,9 @@ const Profile = () => {
           <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
         </div>
         <div>
-          <Link className="hover:underline hover:text-[#FFB82F]">Address</Link>
+          <Link className="hover:underline hover:text-[#FFB82F]" to="/address">
+            Address
+          </Link>
           <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
         </div>
         <div>

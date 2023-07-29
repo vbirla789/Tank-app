@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import Menudropdown from "../utils/Menudropdown";
 import Cart from "../utils/Cart";
@@ -16,7 +16,14 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [prof, setProf] = useState(false);
 
+  const { user, loading, isAuthenticated } = useSelector((state) => state.user);
+
+  // console.log(user);
+
   const products = useSelector((state) => state.cart.products);
+  const shippingInfo = useSelector((state) => state.cart.shippingInfo);
+
+  // console.log(shippingInfo);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,7 +37,7 @@ const Navbar = () => {
     } = await axios.post("http://localhost:3000/api/checkout", {
       totalAmount,
     });
-    // console.log(key);
+    // console.log(order);
     const options = {
       key,
       amount: order.amount,
@@ -39,14 +46,17 @@ const Navbar = () => {
       description: "Test Transaction",
       image: img,
       order_id: order.id,
-      callback_url: "http://localhost:4000/api/paymentverification",
+      callback_url: "http://localhost:3000/api/paymentverification",
       prefill: {
-        name: "Gaurav Kumar",
-        email: "gaurav.kumar@example.com",
-        contact: "9000090000",
+        name: user.name,
+        email: user.email,
+        contact: shippingInfo.phoneNo,
       },
       notes: {
-        address: "Razorpay Corporate Office",
+        address: shippingInfo.address,
+        state: shippingInfo.state,
+        city: shippingInfo.city,
+        pincode: shippingInfo.pinCode,
       },
       theme: {
         color: "#2c5567",

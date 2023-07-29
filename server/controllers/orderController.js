@@ -8,7 +8,7 @@ export const newOrder = asyncError(async (req, res, next) => {
   const {
     shippingInfo,
     orderItems,
-    paymentInfo,
+
     itemsPrice,
     taxPrice,
     shippingPrice,
@@ -18,7 +18,7 @@ export const newOrder = asyncError(async (req, res, next) => {
   const order = await Order.create({
     shippingInfo,
     orderItems,
-    paymentInfo,
+
     itemsPrice,
     taxPrice,
     shippingPrice,

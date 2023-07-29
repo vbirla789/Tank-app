@@ -25,7 +25,7 @@ const orderSchema = new mongoose.Schema({
   },
   orderItems: [
     {
-      name: {
+      title: {
         type: String,
         required: true,
       },
@@ -33,19 +33,19 @@ const orderSchema = new mongoose.Schema({
         type: Number,
         required: true,
       },
-      quantity: {
+      cartQuantity: {
         type: Number,
         required: true,
       },
-      image: {
+      img: {
         type: String,
         required: true,
       },
-      product: {
-        type: mongoose.Schema.ObjectId,
-        ref: "Product",
-        required: true,
-      },
+      // product: {
+      //   type: mongoose.Schema.ObjectId,
+      //   ref: "Product",
+      //   required: true,
+      // },
     },
   ],
   user: {
@@ -53,16 +53,16 @@ const orderSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
-  paymentInfo: {
-    id: {
-      type: String,
-      required: true,
-    },
-    status: {
-      type: String,
-      required: true,
-    },
-  },
+  // paymentInfo: {
+  //   id: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   status: {
+  //     type: String,
+  //     required: true,
+  //   },
+  // },
   paidAt: {
     type: Date,
     required: true,

@@ -18,6 +18,7 @@ import Login from "./components/Auth/Login";
 import Signup from "./components/Auth/Signup";
 import { loadUser } from "./redux/Action/userAction";
 import User from "./utils/profile/User";
+import Address from "./utils/profile/Address";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/address",
+        element: <Address />,
       },
     ],
   },

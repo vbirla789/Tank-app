@@ -31,29 +31,6 @@ const cartQuantity = 1;
 
 const Product = ({ images }) => {
   const dispatch = useDispatch();
-  // const products = useSelector((state) => state.cart.products);
-  // const onIcreaseItemQTY = () => {
-  //   dispatch(
-  //     setIncreaseItemQTY({
-  //       id,
-  //       title,
-  //       img,
-  //       price,
-  //       cartQuantity,
-  //     })
-  //   );
-  // };
-  // const onDecreaseItemQTY = () => {
-  //   dispatch(
-  //     setDecreaseItemQTY({
-  //       id,
-  //       title,
-  //       img,
-  //       price,
-  //       cartQuantity,
-  //     })
-  //   );
-  // };
 
   const [loading, setLoading] = useState(false);
   const [more, setMore] = useState(false);
@@ -225,7 +202,7 @@ const Product = ({ images }) => {
                     .No More Cold Water in the Harsh Cold Winter’s{" "}
                   </p>
 
-                  <p classname="">
+                  <p className="">
                     • 99% Prevention from Harmful UV & IR Rays.D. I. Y (Do It
                     Yourself) Easy Installation Friendly Design for New & Old
                     Water Tanks . American Nano Technology and European Quality
