@@ -36,3 +36,30 @@ export const images = [
     img: img2,
   },
 ];
+
+export const item = [
+  {
+    id: 1,
+    img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
+    title: "Water Tank Jacket | 500 litre",
+    price: 1000,
+    cartQuantity: 1,
+    volume: "500 litre",
+  },
+  {
+    id: 2,
+    img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
+    title: "Water Tank Jacket | 750 litre",
+    price: 1500,
+    cartQuantity: 1,
+    volume: "750 litre",
+  },
+  {
+    id: 3,
+    img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
+    title: "Water Tank Jacket | 1000 litre",
+    price: 2000,
+    cartQuantity: 1,
+    volume: "1000 litre",
+  },
+];

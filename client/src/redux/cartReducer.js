@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { item } from "../data/data";
 
 const initialState = {
   products: localStorage.getItem("cart")
@@ -7,6 +8,7 @@ const initialState = {
   shippingInfo: localStorage.getItem("shippingInfo")
     ? JSON.parse(localStorage.getItem("shippingInfo"))
     : {},
+  productData: item,
 };
 
 export const counterSlice = createSlice({

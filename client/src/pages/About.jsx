@@ -2,10 +2,11 @@ import React from "react";
 import img from "../assets/img1.jpg";
 import frame1 from "../assets/Frame 4.svg";
 import frame2 from "../assets/Frame 5.svg";
+import video from "../assets/tankvideo.mp4";
 
 const About = () => {
   return (
-    <div className="min-h-[200vh] pt-[10vh] md:pt-[12vh] about_color py-10">
+    <div className="min-h-[200vh] pt-[10vh] md:pt-[12vh] about_color ">
       <div className="about_head_color mt-5 mx-[10vh] pt-10 pb-[20vh] px-[15vh] rounded-lg md:px-[10vh] md:pb-[10vh] sm:px-4 sm:mx-[5vh] sm:pb-[5vh]">
         <h1 className="text-center font-semibold text-5xl lg:text-4xl text-orange-300 underline mb-[15vh] md:mb-[5vh]">
           About Us
@@ -65,6 +66,16 @@ const About = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="mx-0 mt-[15vh]">
+        <video
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          className="h-[70vh] w-full object-cover"
+        >
+          <source type="video/mp4" src={video} />
+        </video>
       </div>
     </div>
   );
