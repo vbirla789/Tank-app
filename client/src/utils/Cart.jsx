@@ -12,28 +12,18 @@ const Cart = ({ checkoutHandler }) => {
   const navigate = useNavigate();
 
   const products = useSelector((state) => state.cart.products);
-  const shippingInfo = useSelector((state) => state.cart.shippingInfo);
+
   const { error } = useSelector((state) => state.newOrder);
 
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
 
   const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
 
-  const order = {
-    shippingInfo,
-    orderItems: products,
-    itemsPrice: totalAmount,
-    taxPrice: 1000,
-    shippingPrice: 1000,
-    totalPrice: 3000,
-  };
-
   // console.log(order);
 
   const handleCheckout = () => {
     if (isAuthenticated) {
       checkoutHandler(totalAmount);
-      // dispatch(createOrder(order));
     } else {
       navigate("/login");
     }
@@ -41,7 +31,6 @@ const Cart = ({ checkoutHandler }) => {
 
   useEffect(() => {
     if (error) {
-      // alert.error(error);
       dispatch(clearErrors());
     }
 

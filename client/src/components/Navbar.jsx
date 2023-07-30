@@ -179,10 +179,10 @@ const Navbar = () => {
         ""
       )}
       {prof ? (
-        <div className="absolute top-5 right-[5%] color rounded-[50%] p-2 opacity-90">
+        <div className="absolute top-5 right-[3%] color rounded-[50%] p-2 opacity-90">
           <RxCross1
             onClick={() => setProf(!prof)}
-            className="text-white text-3xl mt-1  z-30 "
+            className="text-white text-3xl mt-1 z-30"
           />
         </div>
       ) : (

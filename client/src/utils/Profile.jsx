@@ -1,18 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/Action/userAction";
 import User from "./profile/User";
+import Orders from "./profile/Orders";
+import { clearErrors, myOrders } from "../redux/Action/orderAction";
 
 const Profile = () => {
   const [user, setUser] = useState(false);
+  const [order, setOrder] = useState(false);
   const dispatch = useDispatch();
   const logoutUser = () => {
     dispatch(logout());
   };
+
+  const { loading, error, orders } = useSelector((state) => state.myOrders);
+
+  console.log(orders);
+
+  useEffect(() => {
+    if (error) {
+      dispatch(clearErrors());
+    }
+
+    dispatch(myOrders());
+  }, [dispatch, error]);
   return (
     <div>
       <nav
@@ -29,10 +44,14 @@ const Profile = () => {
           <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
         </div>
         <div>
-          <Link to="product/2" className="hover:underline hover:text-[#FFB82F]">
+          <Link
+            className="hover:underline hover:text-[#FFB82F]"
+            onClick={() => setOrder(!order)}
+          >
             Orders
           </Link>
           <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
+          {order ? <Orders orders={orders} /> : ""}
         </div>
         <div>
           <Link className="hover:underline hover:text-[#FFB82F]" to="/address">

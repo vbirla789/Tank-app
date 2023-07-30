@@ -36,7 +36,7 @@ const CartItems = ({ item: { id, img, title, price, cartQuantity } }) => {
   };
   return (
     <div key={id}>
-      <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3">
+      <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3 lg:mb-2">
         <div>
           <NavLink>
             <img src={img} className="h-[60px] w-[60px]" />

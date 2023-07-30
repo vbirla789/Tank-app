@@ -41,7 +41,14 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    const { data } = await axios.get("/api/v1/orders/me");
+    const config = {
+      withCredentials: true,
+    };
+
+    const { data } = await axios.get(
+      "http://localhost:3000/api/v1/orders/me",
+      config
+    );
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {

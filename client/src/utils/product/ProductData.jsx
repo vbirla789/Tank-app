@@ -56,7 +56,10 @@ const ProductData = ({ id, img, title, price, volume, cartQuantity }) => {
                  </div>
                </div> */}
         <div className="flex items-center justify-center gap-4 mb-10">
-          <button className="rounded-full py-[6px] w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg">
+          <button
+            className="rounded-full py-[6px] w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg"
+            onClick={addCart}
+          >
             BUY NOW
           </button>
           <button

@@ -15,7 +15,7 @@ const User = () => {
     <nav className=" color flex flex-col  gap-5 opacity-100 absolute top-0 right-0 py-[15vh] px-10 transition-all duration-500 w-[50%] h-[100vh] mt-0 font-semibold text-xl md:px-3">
       {isAuthenticated ? (
         <div className="flex items-center justify-center flex-col">
-          <h1 className="text-4xl mb-5">Profile</h1>
+          <h1 className="text-4xl mb-[15vh] md:mb-6">Profile</h1>
           <div className="flex gap-4 md:gap-1 mb-3">
             <span>User :</span>
             <h1>{user.name}</h1>
