@@ -6,23 +6,13 @@ import Img from "../utils/Img";
 import { SplideSlide, Splide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import DotLoader from "react-spinners/DotLoader";
-import {
-  ArrowDownIcon,
-  MinusIcon,
-  PlusIcon,
-  TrashIcon,
-} from "@heroicons/react/24/solid";
 
 import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import More from "../utils/More";
 import { Link, NavLink, useParams } from "react-router-dom";
 
-import {
-  removeItem,
-  setDecreaseItemQTY,
-  setIncreaseItemQTY,
-} from "../redux/cartReducer";
 import ProductData from "../utils/product/ProductData";
+import Reviews from "../utils/product/Reviews";
 
 const id = 1;
 const img =
@@ -32,7 +22,7 @@ const price = 1000;
 const cartQuantity = 1;
 const volume = "750 litre";
 
-const Product = ({ images }) => {
+const Product = ({ images, items }) => {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
@@ -177,6 +167,7 @@ const Product = ({ images }) => {
           )}
         </div>
         <hr class="h-[2px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full my-4 px-5 "></hr>
+        <Reviews items={items} />
       </div>
     </div>
   );
