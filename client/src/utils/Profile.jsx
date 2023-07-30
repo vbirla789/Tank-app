@@ -19,7 +19,7 @@ const Profile = () => {
 
   const { loading, error, orders } = useSelector((state) => state.myOrders);
 
-  console.log(orders);
+  // console.log(orders);
 
   useEffect(() => {
     if (error) {
