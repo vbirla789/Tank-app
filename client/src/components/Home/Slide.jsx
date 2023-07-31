@@ -31,7 +31,9 @@ const Slide = ({ items }) => {
       <div className="flex justify-center items-center px-5 md:flex-col md:gap-10">
         <div className="w-1/4 flex items-center justify-center">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-7xl font-sans pb-2 text-white slide-head">4.5</p>
+            <p className="text-7xl font-sans pb-2 text-white content-head">
+              4.5
+            </p>
             <p className="text-xl text-[#EBEBEB]">Rating:</p>
             <span className="flex my-4 text-2xl text-[#ff6900]">
               <AiFillStar />

@@ -13,7 +13,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[30%] left-[35%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
               4.5
             </p>
           </div>
@@ -24,7 +24,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[30%] left-[35%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
               4.5
             </p>
           </div>
@@ -35,7 +35,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[30%] left-[35%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
               4.5
             </p>
           </div>
