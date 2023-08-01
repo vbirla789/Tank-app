@@ -26,7 +26,10 @@ const Menudropdown = ({ isMenuOpen }) => {
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <Link to="product/2" className="hover:underline hover:text-[#FFB82F]">
+        <Link
+          to="product/64c81486940c3b554a23006c"
+          className="hover:underline hover:text-[#FFB82F]"
+        >
           Product
         </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
@@ -50,7 +53,7 @@ const Menudropdown = ({ isMenuOpen }) => {
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
       <div>
-        <button className="rounded-full py-1 px-5 bg-black text-white z-10 font-semibold mt-5">
+        <button className="rounded-full py-1 px-5 border-2 text-white z-10 font-semibold mt-5">
           <NavLink to="login">Login</NavLink>
         </button>
       </div>

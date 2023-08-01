@@ -19,6 +19,7 @@ import Signup from "./components/Auth/Signup";
 import { loadUser } from "./redux/Action/userAction";
 import User from "./utils/profile/User";
 import Address from "./utils/profile/Address";
+import { Toaster } from "react-hot-toast";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -91,6 +92,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
+    <Toaster position="top-center" reverseOrder={false} />
     <RouterProvider router={router} />
   </Provider>
 );

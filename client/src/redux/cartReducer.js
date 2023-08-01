@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { item } from "../data/data";
+import toast from "react-hot-toast";
 
 const initialState = {
   products: localStorage.getItem("cart")
@@ -19,17 +20,20 @@ export const counterSlice = createSlice({
       const item = state.products.find((item) => item.id === action.payload.id);
 
       if (item) {
-        item.quantity += action.payload.quantity;
+        item.cartQuantity += action.payload.cartQuantity;
       } else {
         state.products.push(action.payload);
       }
       localStorage.setItem("cart", JSON.stringify(state.products));
+      toast.success(`Item added `);
     },
     removeItem: (state, action) => {
       const removeItem = state.products.filter(
         (item) => item.id !== action.payload
       );
       state.products = removeItem;
+      toast.success(`Item removed`);
+      localStorage.setItem("cart", JSON.stringify(state.products));
     },
     resetCart: (state, action) => {
       state.products = [];
@@ -60,6 +64,8 @@ export const counterSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.products[itemIndex].cartQuantity += 1;
+
+        toast.success(`Item QTY Increased`);
       }
     },
     setDecreaseItemQTY: (state, action) => {
@@ -69,12 +75,16 @@ export const counterSlice = createSlice({
 
       if (state.products[itemIndex].cartQuantity > 1) {
         state.products[itemIndex].cartQuantity -= 1;
+
+        toast.success(`Item QTY Decreased`);
       }
     },
     saveShippingInfo: (state, action) => {
       state.shippingInfo = action.payload;
 
       localStorage.setItem("shippingInfo", JSON.stringify(action.payload));
+
+      toast.success(`Address Saved`);
     },
   },
 });
