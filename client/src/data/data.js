@@ -39,7 +39,7 @@ export const images = [
 
 export const item = [
   {
-    id: 1,
+    id: "64c81486940c3b554a23006c",
     img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
     title: "Water Tank Jacket | 500 litre",
     price: 1000,
@@ -47,7 +47,7 @@ export const item = [
     volume: "500 litre",
   },
   {
-    id: 2,
+    id: "64c814a2940c3b554a230070",
     img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
     title: "Water Tank Jacket | 750 litre",
     price: 1500,
@@ -55,7 +55,7 @@ export const item = [
     volume: "750 litre",
   },
   {
-    id: 3,
+    id: "64c814b0940c3b554a230074",
     img: "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67",
     title: "Water Tank Jacket | 1000 litre",
     price: 2000,

@@ -13,6 +13,7 @@ import { Link, NavLink, useParams } from "react-router-dom";
 
 import ProductData from "../utils/product/ProductData";
 import Reviews from "../utils/product/Reviews";
+import { getAllReviews, newReview } from "../redux/Action/reviewAction";
 
 const id = 1;
 const img =
@@ -25,6 +26,8 @@ const volume = "750 litre";
 const Product = ({ images, items }) => {
   const [data, setData] = useState([]);
   const { id } = useParams();
+
+  // console.log(id);
 
   const dispatch = useDispatch();
 
@@ -42,6 +45,17 @@ const Product = ({ images, items }) => {
   useEffect(() => {
     compare();
   }, [id]);
+
+  const reviewsData = useSelector((state) => state.allReview);
+
+  console.log(reviewsData);
+
+  useEffect(
+    (id) => {
+      dispatch(getAllReviews(id));
+    },
+    [dispatch]
+  );
 
   const [loading, setLoading] = useState(false);
   const [more, setMore] = useState(false);
@@ -96,7 +110,7 @@ const Product = ({ images, items }) => {
                 <h1 className="font-semibold text-lg">Choose a Size:</h1>
                 <div className="flex justify-center items-end">
                   <div className="w-1/4 p-4 sm:w-1/3">
-                    <NavLink to="/product/1">
+                    <NavLink to="/product/64c81486940c3b554a23006c">
                       <img
                         src={img}
                         alt="Small Image"
@@ -106,7 +120,7 @@ const Product = ({ images, items }) => {
                     <p className="text-center mr-1 text-base">500 litre</p>
                   </div>
                   <div className="w-1/3 p-4 ">
-                    <NavLink to="/product/2">
+                    <NavLink to="/product/64c814a2940c3b554a230070">
                       <img
                         src={img}
                         alt="Medium Image"
@@ -116,7 +130,7 @@ const Product = ({ images, items }) => {
                     <p className="text-center mr-1 text-base">750 litre</p>
                   </div>
                   <div className="w-1/3 p-4 ">
-                    <NavLink to="/product/3">
+                    <NavLink to="/product/64c814b0940c3b554a230074">
                       <img
                         src={img}
                         alt="Large Image"
@@ -167,7 +181,7 @@ const Product = ({ images, items }) => {
           )}
         </div>
         <hr class="h-[2px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full my-4 px-5 "></hr>
-        <Reviews items={items} />
+        <Reviews reviewsData={reviewsData} />
       </div>
     </div>
   );

@@ -25,38 +25,6 @@ const ProductData = ({ id, img, title, price, volume, cartQuantity }) => {
       <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full mb-4 "></hr>
 
       <div className="bg-blue-100 rounded-xl py-8 mx-auto px-6 w-full">
-        {/* <div className="flex items-center mb-10 justify-center">
-                 <div className="flex gap-5">
-                   {" "}
-                   <h1 className="font-semibold ">Quantity :</h1>
-                   <div className="flex items-center justify-around bg-slate-400 w-[20vh] sm:w-[10vh] lg:w-[15vh] mx-auto rounded-md blur-xsm shadow-md">
-                     <button
-                       type="button"
-                       className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
-                     >
-                       <MinusIcon
-                         className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2] "
-                         onClick={onDecreaseItemQTY}
-                       />
-                     </button>
-                     {products.map((val) => (
-                       <div className="bg-theme-cart rounded text-white font-medium lg:text-xs w-7 h-6 lg:h-5 lg:w-6 flex items-center justify-center text-sm">
-                         {val.cartQuantity}
-                       </div>
-                     ))}
-
-                     <button
-                       type="button"
-                       className="bg-theme-cart rounded w-6 h-6 lg:w-5 lg:h-5 flex items-center justify-center active:scale-90"
-                     >
-                       <PlusIcon
-                         className="w-5 h-5 lg:w-4 lg:h-4 text-white stroke-[2]"
-                         onClick={onIcreaseItemQTY}
-                       />
-                     </button>
-                   </div>
-                 </div>
-               </div> */}
         <div className="flex items-center justify-center gap-4 mb-10">
           <button
             className="rounded-full py-[6px] w-[50%] text-black z-10 font-semibold hero_bg drop-shadow-lg"
@@ -104,7 +72,7 @@ const ProductData = ({ id, img, title, price, volume, cartQuantity }) => {
             Easy Installation Friendly Design for New & Old Water Tanks .
             American Nano Technology and European Quality Materials used{" "}
           </p>
-          <p classname="">
+          <p className="">
             {" "}
             • Savings on Electricity Bills from R.O’s, Heater’s and Geyser’s .
             Prevention from Harmful Bacteria’s , Fungus, Mildew, Dust and Leaf’s

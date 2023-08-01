@@ -2,7 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./cartReducer";
 import userReducer from "./Reducer/userReducer";
 import { myOrdersReducer, newOrderReducer } from "./Reducer/orderReducer";
-import { newReviewReducer } from "./Reducer/reviewReducer";
+import {
+  newReviewReducer,
+  productReviewsReducer,
+} from "./Reducer/reviewReducer";
 
 export default configureStore({
   reducer: {
@@ -11,5 +14,6 @@ export default configureStore({
     newOrder: newOrderReducer,
     myOrders: myOrdersReducer,
     newReview: newReviewReducer,
+    allReview: productReviewsReducer,
   },
 });

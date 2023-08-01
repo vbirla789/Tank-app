@@ -105,7 +105,7 @@ const Navbar = () => {
             <Link to="about">About</Link>
           </li>
           <li className="hover:underline hover:text-[#FFB82F]">
-            <Link to="product/1">Product</Link>
+            <Link to="product/64c81486940c3b554a23006c">Product</Link>
           </li>
           <li className="hover:underline hover:text-[#FFB82F]">
             <Link to="product/1">FAQ's</Link>

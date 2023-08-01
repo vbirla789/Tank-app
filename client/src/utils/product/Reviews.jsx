@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../../assets/Ellipse 35.svg";
 
 import ReviewSlide from "./ReviewSlide";
+import CreateReview from "./CreateReview";
+import { useDispatch, useSelector } from "react-redux";
+import { newReview } from "../../redux/Action/reviewAction";
+import { useParams } from "react-router";
 
-const Reviews = ({ items }) => {
+const Reviews = ({ reviewsData }) => {
+  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
+  //   const { review } = useSelector((state) => state.newReview);
+
+  //   console.log(review);
+
   return (
     <div>
       <h1 className="text-4xl font-bold text-center underline my-[8vh] sm:my-[5vh]">
@@ -13,7 +23,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl sm:text-2xl content-head sm:left-[30%] sm:bottom-[30%]">
               4.5
             </p>
           </div>
@@ -24,7 +34,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl sm:text-2xl content-head sm:left-[30%] sm:bottom-[30%]">
               4.5
             </p>
           </div>
@@ -35,7 +45,7 @@ const Reviews = ({ items }) => {
         <div>
           <div className="relative flex items-center justify-center">
             <img src={img} className="w-[70%]" />
-            <p className="absolute bottom-[35%] left-[30%] text-4xl content-head sm:left-[27%] sm:bottom-[20%]">
+            <p className="absolute bottom-[35%] left-[30%] text-4xl sm:text-2xl content-head sm:left-[30%] sm:bottom-[30%]">
               4.5
             </p>
           </div>
@@ -45,11 +55,16 @@ const Reviews = ({ items }) => {
         </div>
       </div>
 
-      <ReviewSlide items={items} />
-      <hr class="h-[2px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full my-10 px-5 "></hr>
-      <div className="flex items-center justify-center">
-        <button className="bg-[#2E81FF] mb-10 py-3 px-10 rounded-md text-sm font-semibold text-white drop-shadow-2xl">
-          Write a review / sumbit a feedback
+      <ReviewSlide reviewsData={reviewsData} />
+      <hr class="h-[2px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 mx-auto w-full mt-10 px-5 "></hr>
+      <div className="flex items-center justify-center flex-col">
+        {open ? <CreateReview /> : ""}
+
+        <button
+          className="bg-blue-500 hover:bg-blue-600 my-10 py-3 px-10 rounded-md text-sm font-semibold text-white drop-shadow-2xl"
+          onClick={() => setOpen(!open)}
+        >
+          Write a review / feedback
         </button>
       </div>
     </div>

@@ -5,7 +5,9 @@ import "@splidejs/react-splide/css";
 import Items from "../../utils/Items";
 import ReviewItems from "./ReviewItems";
 
-const ReviewSlide = ({ items }) => {
+const ReviewSlide = ({ reviewsData: { reviews } }) => {
+  console.log(reviews);
+
   const splideOptions = {
     perPage: 2.5,
     perMove: 1,
@@ -41,7 +43,7 @@ const ReviewSlide = ({ items }) => {
         </div>
         <div className="w-3/4 md:w-[70%] sm:w-[100%]">
           <Splide options={splideOptions}>
-            {items.map((data, i) => (
+            {reviews.map((data, i) => (
               <SplideSlide key={i}>
                 <ReviewItems {...data} />
               </SplideSlide>

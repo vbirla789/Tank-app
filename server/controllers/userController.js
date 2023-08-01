@@ -238,5 +238,6 @@ export const createProductReview = asyncError(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    review,
   });
 });
