@@ -184,14 +184,13 @@ function App() {
             </p>
           )}
           {/* Add more content for other slides as needed */}
-          {currentSlide === 0 && (
-            <button
-              className="bg-[#fff] lg:py-1 lg:px-3 rounded-md mt-10 text-black px-8 py-2 text-xl lg:text-lg font-semibold"
-              onClick={toggleContent}
-            >
-              {expanded ? "Read Less" : "Read More"}
-            </button>
-          )}
+
+          <button
+            className="bg-[#fff] lg:py-1 lg:px-3 rounded-md mt-10 text-black px-8 py-2 text-xl lg:text-lg font-semibold"
+            onClick={toggleContent}
+          >
+            {expanded ? "Read Less" : "Read More"}
+          </button>
         </div>
       </div>
       <hr class="h-[5px] mt-4 mx-10 bg-gray-200 border-0 border-dotted dark:bg-gray-700 "></hr>
