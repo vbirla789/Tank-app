@@ -24,6 +24,16 @@ export const getAllProducts = asyncError(async (req, res) => {
   });
 });
 
+// get all product (admin)
+
+export const getAllAdminProducts = asyncError(async (req, res) => {
+  const products = await Product.find();
+  res.status(200).json({
+    success: true,
+    products,
+  });
+});
+
 // GET PRODUCT DETAILS
 
 export const getProductDetails = asyncError(async (req, res, next) => {

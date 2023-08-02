@@ -6,6 +6,7 @@ import {
   newReviewReducer,
   productReviewsReducer,
 } from "./Reducer/reviewReducer";
+import { productsReducer } from "./Reducer/productReducer";
 
 export default configureStore({
   reducer: {
@@ -15,5 +16,6 @@ export default configureStore({
     myOrders: myOrdersReducer,
     newReview: newReviewReducer,
     allReview: productReviewsReducer,
+    products: productsReducer,
   },
 });

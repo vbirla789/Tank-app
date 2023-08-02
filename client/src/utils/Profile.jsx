@@ -10,7 +10,7 @@ import Orders from "./profile/Orders";
 import { clearErrors, myOrders } from "../redux/Action/orderAction";
 
 const Profile = () => {
-  const [user, setUser] = useState(false);
+  const [prof, setProf] = useState(false);
   const [order, setOrder] = useState(false);
   const dispatch = useDispatch();
   const logoutUser = () => {
@@ -19,7 +19,9 @@ const Profile = () => {
 
   const { loading, error, orders } = useSelector((state) => state.myOrders);
 
-  // console.log(orders);
+  const { user, isAuthenticated } = useSelector((state) => state.user);
+
+  // console.log(user.role);
 
   useEffect(() => {
     if (error) {
@@ -28,21 +30,29 @@ const Profile = () => {
 
     dispatch(myOrders());
   }, [dispatch, error]);
+
   return (
     <div>
       <nav
         className="left-0  
      color flex flex-col gap-5 md:gap-0 opacity-100 absolute top-0 py-6 px-2 transition-all duration-500 w-full h-[120vh] mt-0 font-semibold text-xl "
       >
-        <div className="flex gap-4 items-center ml-5 text-5xl mb-5">
+        <div className="flex gap-4 items-center ml-5 text-5xl mb-10">
           <CgProfile />
         </div>
-        <div className="mt-5">
-          <Link to="about" className="hover:underline hover:text-[#FFB82F]">
-            Dashboard
-          </Link>
-          <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
-        </div>
+        {user.role == "admin" ? (
+          <div className="mt-5">
+            <Link
+              to="/admin/dashboard"
+              className="hover:underline hover:text-[#FFB82F]"
+            >
+              Dashboard
+            </Link>
+            <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
+          </div>
+        ) : (
+          ""
+        )}
         <div>
           <Link
             className="hover:underline hover:text-[#FFB82F]"
@@ -62,12 +72,12 @@ const Profile = () => {
         <div>
           <Link
             className="hover:underline hover:text-[#FFB82F]"
-            onClick={() => setUser(!user)}
+            onClick={() => setProf(!prof)}
           >
             Profile
           </Link>
           <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
-          {user ? <User /> : ""}
+          {prof ? <User /> : ""}
         </div>
 
         <div>

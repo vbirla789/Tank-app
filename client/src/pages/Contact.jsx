@@ -5,7 +5,7 @@ import mail from "../assets/gmail.png";
 
 const Contact = () => {
   return (
-    <div className="min-h-[200vh] pt-[10vh] md:pt-[12vh] about_color py-10">
+    <div className="py-[10vh] md:pt-[12vh] about_color">
       <div className="about_head_color mt-5 mx-5 pb-[10vh] pl-[25vh] rounded-lg md:pb-[10vh] flex justify-between  md:flex-col md:mx-[10vh] md:pl-[12vh] sm:px-4 sm:mx-[5vh] sm:pb-[5vh]">
         <div className=" max-w-sm flex flex-col mt-[10vh] sm:mt-[5vh] md:justify-center">
           <h1 className="font-semibold text-5xl lg:text-4xl text-[#fff] underline mb-10 text-center">

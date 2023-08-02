@@ -8,6 +8,7 @@ import {
   getProductDetails,
   getAllProductReviews,
   deleteReview,
+  getAllAdminProducts,
 } from "../controllers/productController.js";
 import { createProductReview } from "../controllers/userController.js";
 import { isAuthenticatedUser, authorizeRoles } from "../middleware/auth.js";
@@ -17,6 +18,10 @@ const router = express.Router();
 router
   .route("/products")
   .get(isAuthenticatedUser, authorizeRoles("admin"), getAllProducts);
+
+router
+  .route("/admin/products")
+  .get(isAuthenticatedUser, authorizeRoles("admin"), getAllAdminProducts);
 
 router.route("/admin/products/new").post(isAuthenticatedUser, createProduct);
 

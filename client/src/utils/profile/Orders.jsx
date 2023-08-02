@@ -12,6 +12,8 @@ const Orders = ({ orders }) => {
       navigate("/login");
     }
   });
+
+  console.log(orders);
   return (
     <div>
       {isAuthenticated ? (

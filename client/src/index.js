@@ -20,6 +20,8 @@ import { loadUser } from "./redux/Action/userAction";
 import User from "./utils/profile/User";
 import Address from "./utils/profile/Address";
 import { Toaster } from "react-hot-toast";
+import Dashboard from "./utils/dashboard/Dashboard";
+import ProductList from "./utils/dashboard/ProductList";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -84,6 +86,14 @@ const router = createBrowserRouter([
       {
         path: "/address",
         element: <Address />,
+      },
+      {
+        path: "/admin/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/admin/products",
+        element: <ProductList />,
       },
     ],
   },
