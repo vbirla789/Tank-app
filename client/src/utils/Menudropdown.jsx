@@ -18,7 +18,12 @@ const Menudropdown = ({ isMenuOpen }) => {
           <img src={tank} className="w-[10vh] h-auto " />
         </Link>
       </div> */}
-
+      <div>
+        <Link to="/" className="hover:underline hover:text-[#FFB82F]">
+          Home
+        </Link>
+        <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
+      </div>
       <div>
         <Link to="about" className="hover:underline hover:text-[#FFB82F]">
           About

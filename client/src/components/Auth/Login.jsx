@@ -20,11 +20,11 @@ const Login = () => {
     dispatch(login(loginEmail, loginPassword));
   };
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/");
-    }
-  }, [dispatch, isAuthenticated]);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     navigate("/");
+  //   }
+  // }, [dispatch, isAuthenticated]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 sm:px-10">
