@@ -40,12 +40,7 @@ const Menudropdown = ({ isMenuOpen }) => {
         </Link>
         <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
       </div>
-      <div>
-        <Link to="product/2" className="hover:underline hover:text-[#FFB82F]">
-          Blog
-        </Link>
-        <hr class="h-[1px] mt-3 bg-white border-0 border-dotted  "></hr>
-      </div>
+
       <div>
         <Link to="contact" className="hover:underline hover:text-[#FFB82F]">
           Contact

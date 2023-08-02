@@ -178,7 +178,7 @@ const Navbar = () => {
       ) : (
         ""
       )}
-      {prof ? (
+      {isAuthenticated && prof ? (
         <div className="absolute top-5 right-[3%] color rounded-[50%] p-2 opacity-90">
           <RxCross1
             onClick={() => setProf(!prof)}
