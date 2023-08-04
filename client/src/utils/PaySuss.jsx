@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { createOrder } from "../redux/Action/orderAction";
+import { resetCart } from "../redux/cartReducer";
 
 const PaySuss = () => {
   const searchQuery = useSearchParams()[0];
@@ -24,6 +25,7 @@ const PaySuss = () => {
 
   useEffect(() => {
     dispatch(createOrder(order));
+    dispatch(resetCart());
   }, [dispatch]);
   return (
     <div className="flex items-center justify-center min-h-[100vh] flex-col">

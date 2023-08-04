@@ -107,7 +107,7 @@ const Product = ({ images }) => {
                   </SplideSlide>
                 ))}
               </Splide>
-              <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 w-[40%]mx-auto"></hr>
+              <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 w-[80%] mx-auto"></hr>
               <div className="mt-[10vh] mx-10 sm:mt-2">
                 <h1 className="font-semibold text-lg">Choose a Size:</h1>
                 {selectedType == "Basic" ? (
