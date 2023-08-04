@@ -11,7 +11,7 @@ const ProductData = ({
     dispatch(addToCart(item));
   };
   return (
-    <div className="flex flex-col mr-10 md:items-center md:w-full md:px-5">
+    <div className="flex flex-col mr-10 md:items-center md:w-full md:px-5 w-[100%]">
       <h2 className="text-2xl font-semibold mb-2 pt-5 sm:text-center">
         {title}
       </h2>
