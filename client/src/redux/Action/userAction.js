@@ -12,6 +12,9 @@ import {
   REGISTER_FAIL,
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
+  ALL_USERS_FAIL,
+  ALL_USERS_REQUEST,
+  ALL_USERS_SUCCESS,
 } from "../Constant/userContant";
 
 import axios from "axios";
@@ -101,6 +104,26 @@ export const logout = () => async (dispatch) => {
       type: LOGOUT_FAIL,
       payload: error.response.data.message,
     });
+  }
+};
+
+// get All Users
+export const getAllUsers = () => async (dispatch) => {
+  try {
+    const config = {
+      withCredentials: true,
+    };
+
+    dispatch({ type: ALL_USERS_REQUEST });
+
+    const { data } = await axios.get(
+      "http://localhost:3000/api/v1/admin/users",
+      config
+    );
+
+    dispatch({ type: ALL_USERS_SUCCESS, payload: data.users });
+  } catch (error) {
+    dispatch({ type: ALL_USERS_FAIL, payload: error.response.data.message });
   }
 };
 

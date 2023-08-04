@@ -1,15 +1,57 @@
-import { React, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartItems from "./CartItems";
 import { getTotals } from "../redux/cartReducer";
-
+import axios from "axios";
 import { BsFillCartDashFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { clearErrors, createOrder } from "../redux/Action/orderAction";
+import img from "../assets/WhatsApp Image 2023-06-26 at 2.33 1.png";
 
-const Cart = ({ checkoutHandler }) => {
+const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const shippingInfo = useSelector((state) => state.cart.shippingInfo);
+
+  const checkoutHandler = async (totalAmount) => {
+    const {
+      data: { key },
+    } = await axios.get("http://localhost:3000/api/getkey");
+
+    const {
+      data: { order },
+    } = await axios.post("http://localhost:3000/api/checkout", {
+      totalAmount,
+    });
+
+    const options = {
+      key,
+      amount: order.amount,
+      currency: "INR",
+      name: "Tank App",
+      description: "Test Transaction",
+      image: img,
+      order_id: order.id,
+      callback_url: "http://localhost:3000/api/paymentverification",
+      prefill: {
+        name: user.name,
+        email: user.email,
+        contact: shippingInfo.phoneNo,
+      },
+      notes: {
+        address: shippingInfo.address,
+        state: shippingInfo.state,
+        city: shippingInfo.city,
+        pincode: shippingInfo.pinCode,
+      },
+      theme: {
+        color: "#2c5567",
+      },
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+  };
 
   const products = useSelector((state) => state.cart.products);
 
@@ -17,9 +59,9 @@ const Cart = ({ checkoutHandler }) => {
 
   const { user, loading, isAuthenticated } = useSelector((state) => state.user);
 
-  const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
+  // console.log(isAuthenticated);
 
-  // console.log(order);
+  const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
 
   const handleCheckout = () => {
     if (isAuthenticated) {
@@ -35,7 +77,7 @@ const Cart = ({ checkoutHandler }) => {
     }
 
     dispatch(getTotals());
-  }, [products, dispatch, alert, error]);
+  }, [products, dispatch, alert]);
 
   return (
     <nav

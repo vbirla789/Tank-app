@@ -6,7 +6,7 @@ import Items from "../../utils/Items";
 import ReviewItems from "./ReviewItems";
 
 const ReviewSlide = ({ reviewsData: { reviews } }) => {
-  console.log(reviews);
+  //   console.log(reviews);
 
   const splideOptions = {
     perPage: 2.5,

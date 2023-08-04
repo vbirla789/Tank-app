@@ -2,14 +2,16 @@ import React from "react";
 import { addToCart } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 
-const ProductData = ({ id, img, title, price, volume, cartQuantity }) => {
+const ProductData = ({
+  data: { id, img, title, price, volume, cartQuantity },
+}) => {
   const dispatch = useDispatch();
   const addCart = () => {
     const item = { id, img, title, price, cartQuantity };
     dispatch(addToCart(item));
   };
   return (
-    <div className="flex flex-col w-1/2 mr-10 md:items-center md:w-full md:px-5">
+    <div className="flex flex-col mr-10 md:items-center md:w-full md:px-5">
       <h2 className="text-2xl font-semibold mb-2 pt-5 sm:text-center">
         {title}
       </h2>

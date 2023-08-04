@@ -22,49 +22,15 @@ const Navbar = () => {
 
   const products = useSelector((state) => state.cart.products);
   const shippingInfo = useSelector((state) => state.cart.shippingInfo);
+  const totalAmount = useSelector((state) => state.cart.cartTotalAmount);
 
   // console.log(shippingInfo);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const checkoutHandler = async (totalAmount) => {
-    const {
-      data: { key },
-    } = await axios.get("http://localhost:3000/api/getkey");
-
-    const {
-      data: { order },
-    } = await axios.post("http://localhost:3000/api/checkout", {
-      totalAmount,
-    });
-    // console.log(order);
-    const options = {
-      key,
-      amount: order.amount,
-      currency: "INR",
-      name: "Tank App",
-      description: "Test Transaction",
-      image: img,
-      order_id: order.id,
-      callback_url: "http://localhost:3000/api/paymentverification",
-      prefill: {
-        name: user.name,
-        email: user.email,
-        contact: shippingInfo.phoneNo,
-      },
-      notes: {
-        address: shippingInfo.address,
-        state: shippingInfo.state,
-        city: shippingInfo.city,
-        pincode: shippingInfo.pinCode,
-      },
-      theme: {
-        color: "#2c5567",
-      },
-    };
-    const razor = new window.Razorpay(options);
-    razor.open();
-  };
+  // const handleCheckout = () => {
+  //   checkoutHandler(totalAmount);
+  // };
 
   const [navState, setNavState] = useState(false);
 
@@ -131,6 +97,7 @@ const Navbar = () => {
                   {products.length}
                 </span>
               </div>
+              {open ? <Cart /> : ""}
             </li>
             <li className="md:hidden mt-1">
               {" "}
@@ -166,13 +133,12 @@ const Navbar = () => {
           {isMenuOpen && <Menudropdown isMenuOpen={isMenuOpen} />}
         </div>
       </div>
-      {open && <Cart checkoutHandler={checkoutHandler} />}
 
       {open ? (
         <div className="absolute top-4 right-[35%] md:right-[10%] color rounded-[50%] p-2 opacity-90">
           <RxCross1
             onClick={() => setOpen(!open)}
-            className="text-white text-3xl mt-1  z-30 "
+            className="text-white text-3xl mt-1 z-30 "
           />
         </div>
       ) : (

@@ -8,7 +8,7 @@ import {
   ALL_REVIEW_SUCCESS,
   CLEAR_ERRORS,
 } from "../Constant/reviewContant";
-
+import toast from "react-hot-toast";
 import axios from "axios";
 
 // NEW REVIEW
@@ -31,6 +31,7 @@ export const newReview = (reviewData) => async (dispatch) => {
       type: NEW_REVIEW_SUCCESS,
       payload: data,
     });
+    toast.success(`Review Added`);
   } catch (error) {
     dispatch({
       type: NEW_REVIEW_FAIL,

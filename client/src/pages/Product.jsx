@@ -14,41 +14,56 @@ import { Link, NavLink, useParams } from "react-router-dom";
 import ProductData from "../utils/product/ProductData";
 import Reviews from "../utils/product/Reviews";
 import { getAllReviews, newReview } from "../redux/Action/reviewAction";
+import ProductMap from "../utils/product/ProductMap";
 
-const id = 1;
 const img =
   "https://firebasestorage.googleapis.com/v0/b/pers-f1679.appspot.com/o/tnakii.png?alt=media&token=140f940a-2a8c-49a7-a04f-21d26d433f67";
-const title = "Water Tank Jacket | 750 litre";
-const price = 1000;
-const cartQuantity = 1;
-const volume = "750 litre";
 
-const Product = ({ images, items }) => {
+const Product = ({ images }) => {
   const [data, setData] = useState([]);
+  const [selectedType, setSelectedType] = useState("Basic");
   const { id } = useParams();
-
-  // console.log(id);
 
   const dispatch = useDispatch();
 
   const productData = useSelector((state) => state.cart.productData);
 
-  const compare = () => {
-    let compareProductsData = productData.filter((e) => {
-      return e.id == id;
-    });
-    setData(compareProductsData);
+  console.log(productData);
+
+  // const compare = async (id, type) => {
+  //   const compareProductsData = await productData.filter(
+  //     (item) => item.type === selectedType
+  //   );
+
+  //   const itemsData = await compareProductsData.map((item) => item.items);
+
+  //   let filteredData = itemsData.filter((e) => {
+  //     return e.id == id;
+  //   });
+  //   setData(filteredData);
+  // };
+
+  const compare = async (id, type) => {
+    const compareProductsData = await productData.filter(
+      (item) => item.type === selectedType
+    );
+
+    const itemsData = compareProductsData.flatMap((item) => item.items);
+
+    const filteredItem = itemsData.find((item) => item.id === id);
+
+    setData(filteredItem ? filteredItem : {});
   };
 
-  // console.log(data);
+  console.log(data);
 
   useEffect(() => {
-    compare();
+    compare(id);
   }, [id]);
 
   const reviewsData = useSelector((state) => state.allReview);
 
-  console.log(reviewsData);
+  // console.log(reviewsData);
 
   useEffect(
     (id) => {
@@ -97,7 +112,7 @@ const Product = ({ images, items }) => {
           />
         ) : (
           <div className="mx-4 bg-white flex md:flex-col justify-around w-full ">
-            <div className="w-[40%] md:w-[80%] mx-auto">
+            <div className="w-[80%] md:w-[80%] mx-auto">
               <Splide options={splideOptions}>
                 {images.map((data, i) => (
                   <SplideSlide key={i}>
@@ -108,43 +123,154 @@ const Product = ({ images, items }) => {
               <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 w-[80%] mx-auto"></hr>
               <div className="mt-[10vh] mx-10">
                 <h1 className="font-semibold text-lg">Choose a Size:</h1>
+                {selectedType == "Basic" ? (
+                  <div className="flex justify-center items-end">
+                    <div className="w-1/4 p-4 sm:w-1/3">
+                      <NavLink to="/product/64c81486940c3b554a23006c">
+                        <img
+                          src={img}
+                          alt="Small Image"
+                          className="w-full h-auto"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">500 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814a2940c3b554a230070">
+                        <img
+                          src={img}
+                          alt="Medium Image"
+                          className="w-full h-[16vh] sm:h-[7vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">750 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814b0940c3b554a230074">
+                        <img
+                          src={img}
+                          alt="Large Image"
+                          className="w-full h-[18vh] sm:h-[8vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">1000 litre</p>
+                    </div>
+                  </div>
+                ) : selectedType === "Standard" ? (
+                  <div className="flex justify-center items-end">
+                    <div className="w-1/4 p-4 sm:w-1/3">
+                      <NavLink to="/product/64c81486940c3b554a230061">
+                        <img
+                          src={img}
+                          alt="Small Image"
+                          className="w-full h-auto"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">500 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814a2940c3b554a230072">
+                        <img
+                          src={img}
+                          alt="Medium Image"
+                          className="w-full h-[16vh] sm:h-[7vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">750 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814b0940c3b554a230073">
+                        <img
+                          src={img}
+                          alt="Large Image"
+                          className="w-full h-[18vh] sm:h-[8vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">1000 litre</p>
+                    </div>
+                  </div>
+                ) : selectedType === "Premium" ? (
+                  <div className="flex justify-center items-end">
+                    <div className="w-1/4 p-4 sm:w-1/3">
+                      <NavLink to="/product/64c81486940c3b554a230067">
+                        <img
+                          src={img}
+                          alt="Small Image"
+                          className="w-full h-auto"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">500 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814a2940c3b554a230078">
+                        <img
+                          src={img}
+                          alt="Medium Image"
+                          className="w-full h-[16vh] sm:h-[7vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">750 litre</p>
+                    </div>
+                    <div className="w-1/3 p-4 ">
+                      <NavLink to="/product/64c814b0940c3b554a230079">
+                        <img
+                          src={img}
+                          alt="Large Image"
+                          className="w-full h-[18vh] sm:h-[8vh]"
+                        />
+                      </NavLink>
+                      <p className="text-center mr-1 text-base">1000 litre</p>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+              <div className="mt-[10vh] mx-10">
+                <h1 className="font-semibold text-lg">Choose a Type:</h1>
                 <div className="flex justify-center items-end">
-                  <div className="w-1/4 p-4 sm:w-1/3">
-                    <NavLink to="/product/64c81486940c3b554a23006c">
+                  <div
+                    className="w-1/4 p-4 sm:w-1/3"
+                    onClick={() => setSelectedType("Basic")}
+                  >
+                    <NavLink>
                       <img
                         src={img}
                         alt="Small Image"
                         className="w-full h-auto"
                       />
                     </NavLink>
-                    <p className="text-center mr-1 text-base">500 litre</p>
+                    <p className="text-center mr-1 text-base">Basic</p>
                   </div>
-                  <div className="w-1/3 p-4 ">
-                    <NavLink to="/product/64c814a2940c3b554a230070">
+                  <div
+                    className="w-1/3 p-4"
+                    onClick={() => setSelectedType("Standard")}
+                  >
+                    <NavLink>
                       <img
                         src={img}
                         alt="Medium Image"
                         className="w-full h-[16vh] sm:h-[7vh]"
                       />
                     </NavLink>
-                    <p className="text-center mr-1 text-base">750 litre</p>
+                    <p className="text-center mr-1 text-base">Standard</p>
                   </div>
-                  <div className="w-1/3 p-4 ">
-                    <NavLink to="/product/64c814b0940c3b554a230074">
+                  <div
+                    className="w-1/3 p-4"
+                    onClick={() => setSelectedType("Premium")}
+                  >
+                    <NavLink>
                       <img
                         src={img}
                         alt="Large Image"
                         className="w-full h-[18vh] sm:h-[8vh]"
                       />
                     </NavLink>
-                    <p className="text-center mr-1 text-base">1000 litre</p>
+                    <p className="text-center mr-1 text-base">Premium</p>
                   </div>
                 </div>
               </div>
             </div>
-            {data.map((val, i) => (
-              <ProductData {...val} />
-            ))}
+
+            <ProductData data={data} />
           </div>
         )}
       </div>

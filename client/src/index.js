@@ -22,6 +22,8 @@ import Address from "./utils/profile/Address";
 import { Toaster } from "react-hot-toast";
 import Dashboard from "./utils/dashboard/Dashboard";
 import ProductList from "./utils/dashboard/ProductList";
+import Orders from "./utils/dashboard/Orders";
+import Users from "./utils/dashboard/Users";
 
 const Layout = () => {
   const [loading, setLoading] = useState(false);
@@ -94,6 +96,14 @@ const router = createBrowserRouter([
       {
         path: "/admin/products",
         element: <ProductList />,
+      },
+      {
+        path: "/admin/orders",
+        element: <Orders />,
+      },
+      {
+        path: "/admin/users",
+        element: <Users />,
       },
     ],
   },

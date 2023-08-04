@@ -24,7 +24,7 @@ const PaySuss = () => {
 
   useEffect(() => {
     dispatch(createOrder(order));
-  });
+  }, [dispatch]);
   return (
     <div className="flex items-center justify-center min-h-[100vh] flex-col">
       <h1 className="text-2xl font-semibold">Order Successfull</h1>

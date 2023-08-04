@@ -64,7 +64,7 @@ export const counterSlice = createSlice({
 
       if (itemIndex >= 0) {
         state.products[itemIndex].cartQuantity += 1;
-
+        localStorage.setItem("cart", JSON.stringify(state.products));
         toast.success(`Item QTY Increased`);
       }
     },
@@ -75,7 +75,7 @@ export const counterSlice = createSlice({
 
       if (state.products[itemIndex].cartQuantity > 1) {
         state.products[itemIndex].cartQuantity -= 1;
-
+        localStorage.setItem("cart", JSON.stringify(state.products));
         toast.success(`Item QTY Decreased`);
       }
     },
