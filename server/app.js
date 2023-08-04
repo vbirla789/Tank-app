@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://www.watertankdoctor.com/",
+    origin: "https://water-tank-app-server.onrender.com",
   })
 );
 app.use(express.json());
