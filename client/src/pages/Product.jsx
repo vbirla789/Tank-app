@@ -121,7 +121,7 @@ const Product = ({ images }) => {
                 ))}
               </Splide>
               <hr class="h-[3px] bg-gray-200 border-0 border-dotted dark:bg-gray-700 w-[40%]mx-auto"></hr>
-              <div className="mt-[10vh] mx-10">
+              <div className="mt-[10vh] mx-10 sm:mt-2">
                 <h1 className="font-semibold text-lg">Choose a Size:</h1>
                 {selectedType == "Basic" ? (
                   <div className="flex justify-center items-end">
@@ -224,9 +224,9 @@ const Product = ({ images }) => {
                   </div>
                 ) : null}
               </div>
-              <div className="mt-[10vh] mx-10">
+              <div className="mt-[10vh] mx-10 sm:mt-0">
                 <h1 className="font-semibold text-lg">Choose a Type:</h1>
-                <div className="flex justify-center items-end">
+                <div className="flex justify-center items-end ">
                   <div
                     className="w-1/4 p-4 sm:w-1/3"
                     onClick={() => setSelectedType("Basic")}
@@ -254,7 +254,7 @@ const Product = ({ images }) => {
                     <p className="text-center mr-1 text-base">Standard</p>
                   </div>
                   <div
-                    className="w-1/3 p-4"
+                    className="w-1/3 p-4 sm:ml-4"
                     onClick={() => setSelectedType("Premium")}
                   >
                     <NavLink>
