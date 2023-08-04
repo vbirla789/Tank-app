@@ -17,7 +17,7 @@ const Orders = ({ orders }) => {
   return (
     <div>
       {isAuthenticated ? (
-        <div>
+        <div className="">
           {" "}
           {orders.map((order) => (
             <OrderList key={order._id} {...order} />

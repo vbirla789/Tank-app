@@ -51,7 +51,7 @@ export const getAllReviews = (id) => async (dispatch) => {
     };
 
     const response = await axios.get(
-      `http://localhost:3000/api/v1/reviews?id=64c81486940c3b554a23006c`,
+      `http://localhost:3000/api/v1/reviews?id=64ccda3667f5b0b2f4ea40a5`,
       config
     );
     const reviews = response.data.reviews;

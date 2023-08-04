@@ -29,7 +29,7 @@ const Dashboard = () => {
         <div className="flex justify-center items-center gap-5">
           <div className="rounded-[50%] bg-slate-200 flex items-center justify-center flex-col font-semibold w-[25vh] h-[25vh] gap-2">
             <h1 className="text-xl">Product</h1>
-            <span className="text-2xl">3</span>
+            <span className="text-2xl">9</span>
           </div>
           <div className="rounded-[50%] bg-slate-200 flex items-center justify-center flex-col font-semibold w-[25vh] h-[25vh] gap-2">
             <h1 className="text-xl">Orders</h1>

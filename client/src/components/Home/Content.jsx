@@ -7,7 +7,7 @@ const Content = () => {
         <div className="flex mr-1">
           <p className="text-7xl font-bold text-yellow-300 content-head">#1</p>
         </div>
-        <div className="flex flex-col mt-1">
+        <div className="flex flex-col mt-2">
           <span className="font-semibold text-xl ">Time in</span>
           <span className="font-semibold text-3xl text-[#fff]">India</span>
         </div>

@@ -9,16 +9,18 @@ const OrderList = ({ _id, orderItems, orderStatus }) => {
     >
       <h1 className="text-4xl">Orders</h1>
       <div key="">
-        <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3 lg:mb-2">
-          {orderItems.map((val, i) => (
-            <div className="flex flex-col items-center justify-center gap-2">
-              <NavLink>
-                <img src={val.img} className="h-[50px] w-[50px]" />
-              </NavLink>
+        <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3 lg:mb-2 ">
+          <div className="flex flex-col">
+            {orderItems.map((val, i) => (
+              <div className="flex flex-col items-center justify-center gap-2">
+                <NavLink>
+                  <img src={val.img} className="h-[50px] w-[50px]" />
+                </NavLink>
 
-              <p className="text-center text-base">{val.title}</p>
-            </div>
-          ))}
+                <p className="text-center text-base">{val.title}</p>
+              </div>
+            ))}
+          </div>
           <div>
             <div className="flex flex-col gap-2">
               <p className="text-center text-base">Status:</p>
@@ -27,13 +29,13 @@ const OrderList = ({ _id, orderItems, orderStatus }) => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h1 className="text-base text-center">₹ 1000</h1>
             {orderItems.map((val, i) => (
               <p className="text-base text-center">
                 Quantity: {val.cartQuantity}
               </p>
             ))}
           </div>
+          <h1 className="text-base text-center">₹ 1000</h1>
         </div>
       </div>
     </div>

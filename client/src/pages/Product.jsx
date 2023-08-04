@@ -28,20 +28,7 @@ const Product = ({ images }) => {
 
   const productData = useSelector((state) => state.cart.productData);
 
-  console.log(productData);
-
-  // const compare = async (id, type) => {
-  //   const compareProductsData = await productData.filter(
-  //     (item) => item.type === selectedType
-  //   );
-
-  //   const itemsData = await compareProductsData.map((item) => item.items);
-
-  //   let filteredData = itemsData.filter((e) => {
-  //     return e.id == id;
-  //   });
-  //   setData(filteredData);
-  // };
+  // console.log(productData);
 
   const compare = async (id, type) => {
     const compareProductsData = await productData.filter(
@@ -55,7 +42,7 @@ const Product = ({ images }) => {
     setData(filteredItem ? filteredItem : {});
   };
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     compare(id);
