@@ -4,14 +4,14 @@ import { connectDB } from "./config/database.js";
 
 // HANDLING UNCAUGHT EXCEPTION
 
+connectDB();
+
 process.on("uncaughtException", (err) => {
   console.log(`Error message: ${err}`);
   console.log("Shutting down the server due to uncaught exception");
 
   process.exit(1);
 });
-
-connectDB();
 
 export const instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
