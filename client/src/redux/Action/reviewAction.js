@@ -22,7 +22,7 @@ export const newReview = (reviewData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(
-      "http://localhost:3000/api/v1/review",
+      "https://ecommerce-app-slah.onrender.com/api/v1/review",
       reviewData,
       config
     );
@@ -51,7 +51,7 @@ export const getAllReviews = (id) => async (dispatch) => {
     };
 
     const response = await axios.get(
-      `http://localhost:3000/api/v1/reviews?id=64ccda3667f5b0b2f4ea40a5`,
+      `https://ecommerce-app-slah.onrender.com/api/v1/reviews?id=64ccda3667f5b0b2f4ea40a5`,
       config
     );
     const reviews = response.data.reviews;

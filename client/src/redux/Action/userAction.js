@@ -30,7 +30,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:3000/api/v1/login",
+      "https://ecommerce-app-slah.onrender.com/api/v1/login",
       { email, password },
       config
     );
@@ -57,7 +57,7 @@ export const register = (userData) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "http://localhost:3000/api/v1/register",
+      "https://ecommerce-app-slah.onrender.com/api/v1/register",
       userData,
       config
     );
@@ -80,7 +80,10 @@ export const loadUser = () => async (dispatch) => {
       withCredentials: true,
     };
 
-    const { data } = await axios.get("http://localhost:3000/api/v1/me", config);
+    const { data } = await axios.get(
+      "https://ecommerce-app-slah.onrender.com/api/v1/me",
+      config
+    );
 
     dispatch({ type: LOAD_SUCCESS, payload: data.user });
   } catch (error) {
@@ -94,7 +97,7 @@ export const loadUser = () => async (dispatch) => {
 // LOGOUT USER
 export const logout = () => async (dispatch) => {
   try {
-    await axios.post("http://localhost:3000/api/v1/logout");
+    await axios.post("https://ecommerce-app-slah.onrender.com/api/v1/logout");
 
     dispatch({ type: LOGOUT_SUCCESS });
 
@@ -117,7 +120,7 @@ export const getAllUsers = () => async (dispatch) => {
     dispatch({ type: ALL_USERS_REQUEST });
 
     const { data } = await axios.get(
-      "http://localhost:3000/api/v1/admin/users",
+      "https://ecommerce-app-slah.onrender.com/api/v1/admin/users",
       config
     );
 

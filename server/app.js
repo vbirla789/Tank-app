@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:3001",
+    origin: "https://www.watertankdoctor.com",
   })
 );
 app.use(express.json());
