@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://www.watertankdoctor.com",
+    origin: "https://www.watertankdoctor.com/",
   })
 );
 app.use(express.json());
