@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://www.watertankdoctor.com/",
+    origin: "https://www.watertankdoctor.com",
   })
 );
 app.use(express.json());
@@ -36,5 +36,3 @@ app.use("/api/v1", orderRoute);
 //MIDDLEWARE FOR ERROR
 
 app.use(Error);
-
-//what is this
