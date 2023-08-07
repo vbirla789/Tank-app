@@ -96,7 +96,7 @@ const Cart = () => {
         <CartItems item={item} key={i} />
       ))}
       <div className="relative">
-        <div className="top-[30vh] absolute flex items-center flex-col w-full lg:top-[50vh]">
+        <div className="absolute flex items-center flex-col w-full h-full bottom-0">
           <div className="flex justify-between w-[90%] ">
             <h1>Subtotal</h1>
 
