@@ -11,15 +11,7 @@ import orderRoute from "./routes/orderRoute.js";
 config({ path: "./config/config.env" });
 
 export const app = express();
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "*"); // Replace * with the specific origin you want to allow
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept"
-//   );
-//   next();
-// });
+
 app.use(cookieParser());
 app.use(
   cors({

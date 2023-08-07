@@ -3,6 +3,7 @@
 export const sendToken = (user, statusCode, res) => {
   try {
     const token = user.getJWTToken();
+    const domain = "https://www.watertankdoctor.com/";
 
     console.log(token);
 
@@ -12,6 +13,7 @@ export const sendToken = (user, statusCode, res) => {
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ),
       httpOnly: true,
+      domain: domain,
     };
 
     res.status(statusCode).cookie("token", token, options).json({
