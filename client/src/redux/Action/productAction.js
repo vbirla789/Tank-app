@@ -17,7 +17,7 @@ export const getAdminProduct = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      "https://water-tank-app-server.onrender.com/api/v1/admin/products",
+      "http://localhost:3000/api/v1/admin/products",
       config
     );
 

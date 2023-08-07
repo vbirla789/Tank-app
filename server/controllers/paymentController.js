@@ -36,7 +36,7 @@ export const paymentVerification = async (req, res) => {
       razorpay_signature,
     });
     res.redirect(
-      `http://localhost:3001/paymentsuccess?reference=${razorpay_payment_id}`
+      `http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`
     );
   } else {
     res.status(400).json({

@@ -33,7 +33,7 @@ export const createOrder = (order) => async (dispatch) => {
       withCredentials: true,
     };
     const { data } = await axios.post(
-      "https://water-tank-app-server.onrender.com/api/v1/order/new",
+      "http://localhost:3000/api/v1/order/new",
       order,
       config
     );
@@ -57,7 +57,7 @@ export const myOrders = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      "https://water-tank-app-server.onrender.com/api/v1/orders/me",
+      "http://localhost:3000/api/v1/orders/me",
       config
     );
 
@@ -80,7 +80,7 @@ export const getAllOrders = () => async (dispatch) => {
     };
 
     const { data } = await axios.get(
-      "https://water-tank-app-server.onrender.com/api/v1/admin/orders",
+      "http://localhost:3000/api/v1/admin/orders",
       config
     );
 
@@ -105,7 +105,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
       withCredentials: true,
     };
     const { data } = await axios.post(
-      `https://water-tank-app-server.onrender.com/api/v1/admin/order/${id}`,
+      `http://localhost:3000/api/v1/admin/order/${id}`,
       order,
       config
     );
@@ -128,7 +128,7 @@ export const deleteOrder = (id) => async (dispatch) => {
       withCredentials: true,
     };
     const { data } = await axios.delete(
-      `https://water-tank-app-server.onrender.com/api/v1/admin/order/${id}`,
+      `http://localhost:3000/api/v1/admin/order/${id}`,
       config
     );
 

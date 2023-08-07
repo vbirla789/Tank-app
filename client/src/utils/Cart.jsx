@@ -17,18 +17,13 @@ const Cart = () => {
   const checkoutHandler = async (totalAmount) => {
     const {
       data: { key },
-    } = await axios.get(
-      "https://water-tank-app-server.onrender.com/api/getkey"
-    );
+    } = await axios.get("http://localhost:3000/api/getkey");
 
     const {
       data: { order },
-    } = await axios.post(
-      "https://water-tank-app-server.onrender.com/api/checkout",
-      {
-        totalAmount,
-      }
-    );
+    } = await axios.post("http://localhost:3000/api/checkout", {
+      totalAmount,
+    });
 
     const options = {
       key,
@@ -38,8 +33,7 @@ const Cart = () => {
       description: "Test Transaction",
       image: img,
       order_id: order.id,
-      callback_url:
-        "https://water-tank-app-server.onrender.com/api/paymentverification",
+      callback_url: "http://localhost:3000/api/paymentverification",
       prefill: {
         name: user.name,
         email: user.email,

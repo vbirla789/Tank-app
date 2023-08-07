@@ -7,7 +7,7 @@ export const connectDB = async () => {
       // useCreateIndex: true,
       useUnifiedTopology: true,
     })
-    .then(() => {
-      console.log("MONGO Connection Open");
+    .then((data) => {
+      console.log(`MONGO Connection Open : ${data.connection.host}`);
     });
 };
