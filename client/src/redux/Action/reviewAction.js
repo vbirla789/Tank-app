@@ -51,7 +51,7 @@ export const getAllReviews = (id) => async (dispatch) => {
     };
 
     const response = await axios.get(
-      `https://ecommerce-app-slah.onrender.com/api/v1/reviews?id=64ccda3667f5b0b2f4ea40a5`,
+      `https://ecommerce-app-slah.onrender.com/api/v1/reviews?id=64d10732c23ba6af08a46363`,
       config
     );
     const reviews = response.data.reviews;
