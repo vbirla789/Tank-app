@@ -36,7 +36,8 @@ const Cart = () => {
       description: "Test Transaction",
       image: img,
       order_id: order.id,
-      callback_url: "https://www.watertankdoctor.com/paymentverification",
+      callback_url:
+        "https://ecommerce-app-slah.onrender.com/api/paymentverification",
       prefill: {
         name: user.name,
         email: user.email,
