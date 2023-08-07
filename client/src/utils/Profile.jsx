@@ -70,7 +70,11 @@ const Profile = () => {
               Orders
             </Link>
             <hr class="h-[1px] my-3 bg-white border-0 border-dotted  "></hr>
-            {order ? <Orders orders={orders} /> : ""}
+            {order ? (
+              <Orders orders={orders} />
+            ) : (
+              <h1>Place your first order</h1>
+            )}
           </div>
           <div>
             <Link
