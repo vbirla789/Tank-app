@@ -4,8 +4,6 @@ export const sendToken = (user, statusCode, res) => {
   try {
     const token = user.getJWTToken();
 
-    console.log(token);
-
     // option for cookies
     const options = {
       expires: new Date(
