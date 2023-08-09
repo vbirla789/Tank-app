@@ -30,7 +30,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      "https://ecommerce-app-slah.onrender.com/api/v1/login",
+      "https://www.watertankdoctor.com/api/v1/login",
       { email, password },
       config
     );
