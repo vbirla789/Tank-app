@@ -37,6 +37,8 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
 
+    localStorage.setItem("token", data.token);
+
     toast.success(`Logged In Successfully`);
   } catch (error) {
     dispatch({
