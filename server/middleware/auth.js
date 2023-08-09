@@ -4,9 +4,9 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/userModels.js";
 
 export const isAuthenticatedUser = asyncError(async (req, res, next) => {
-  // const { token } = req.cookies;
-  const token = req.headers.authorization;
-  console.log("Token received:", token);
+  const { token } = req.cookies;
+  // const token = req.headers.authorization;
+  // console.log("Token received:", token);
 
   if (!token) {
     return next(new ErrorHandler("Please login to access this resource", 401));

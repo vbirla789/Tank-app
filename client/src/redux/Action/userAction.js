@@ -37,10 +37,10 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: data.user });
 
-    localStorage.setItem("token", data.token);
+    // localStorage.setItem("token", data.token);
 
-    const token = localStorage.getItem("token");
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    // const token = localStorage.getItem("token");
+    // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
     toast.success(`Logged In Successfully`);
   } catch (error) {
