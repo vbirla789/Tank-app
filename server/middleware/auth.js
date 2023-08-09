@@ -5,7 +5,7 @@ import { User } from "../models/userModels.js";
 
 export const isAuthenticatedUser = asyncError(async (req, res, next) => {
   // const { token } = req.cookies;
-  const token = localStorage.getItem("token");
+  const token = req.headers.authorization;
 
   if (!token) {
     return next(new ErrorHandler("Please login to access this resource", 401));

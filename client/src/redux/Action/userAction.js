@@ -39,6 +39,8 @@ export const login = (email, password) => async (dispatch) => {
 
     localStorage.setItem("token", data.token);
 
+    axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+
     toast.success(`Logged In Successfully`);
   } catch (error) {
     dispatch({
