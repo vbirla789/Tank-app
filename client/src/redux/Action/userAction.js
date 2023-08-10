@@ -37,13 +37,13 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: data });
 
-    document.cookie = `token=${
-      data.token
-    }; Domain=www.watertankdoctor.com; Path=/; Expires=${new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    ).toUTCString()}; HttpOnly`;
+    localStorage.setItem("watertankauthtoken", data.token);
 
-    axios.defaults.headers.common["Authorization"] = `Bearer ${data.token}`;
+    // document.cookie = `token=${data.token};
+
+    // Domain=www.watertankdoctor.com; Path=/; Expires=${new Date(
+    //   Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+    // ).toUTCString()}; HttpOnly`;
 
     // localStorage.setItem("token", data.token);
 
