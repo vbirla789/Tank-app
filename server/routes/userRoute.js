@@ -22,7 +22,7 @@ router.route("/password/forgot").post(forgetPassword);
 
 router.route("/logout").post(Logout);
 
-router.route("/me").get(isAuthenticatedUser, userDetails);
+router.route("/me").post(isAuthenticatedUser, userDetails);
 
 router.route("/me/update").put(isAuthenticatedUser, updateProfile);
 

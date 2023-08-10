@@ -89,11 +89,17 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_REQUEST });
 
+    const token = localStorage.getItem("token");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Set the Authorization header
+      },
       withCredentials: true,
     };
 
-    const { data } = await axios.get(
+    const { data } = await axios.post(
       "https://ecommerce-app-slah.onrender.com/api/v1/me",
       config
     );
