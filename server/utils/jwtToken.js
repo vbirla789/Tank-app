@@ -14,7 +14,15 @@ export const sendToken = (user, statusCode, res) => {
       path: "/", // Set the path to '/'
     };
 
-    res.status(statusCode).cookie("token", token, options).json({
+    // res.status(statusCode).cookie("token", token, options).json({
+    //   success: true,
+    //   user,
+    //   token,
+    // });
+
+    localStorage.setItem("watertankdoctorauthtoken", JSON.stringify(token));
+
+    res.status(statusCode).json({
       success: true,
       user,
       token,
