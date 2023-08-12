@@ -12,13 +12,14 @@ config({ path: "./config/config.env" });
 
 export const app = express();
 
+app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
     origin: "https://www.watertankdoctor.com",
   })
 );
-app.use(cookieParser());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
