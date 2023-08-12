@@ -35,20 +35,7 @@ export const login = (email, password) => async (dispatch) => {
       config
     );
 
-    dispatch({ type: LOGIN_SUCCESS, payload: data });
-
-    localStorage.setItem("watertankauthtoken", data.token);
-
-    // document.cookie = `token=${data.token};
-
-    // Domain=www.watertankdoctor.com; Path=/; Expires=${new Date(
-    //   Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
-    // ).toUTCString()}; HttpOnly`;
-
-    // localStorage.setItem("token", data.token);
-
-    // const token = localStorage.getItem("token");
-    // axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    dispatch({ type: LOGIN_SUCCESS, payload: data.user });
 
     toast.success(`Logged In Successfully`);
   } catch (error) {
