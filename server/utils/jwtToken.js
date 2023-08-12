@@ -14,19 +14,13 @@ export const sendToken = (user, statusCode, res) => {
       path: "/", // Set the path to '/'
     };
 
+    console.log(options);
+
     res.status(statusCode).cookie("token", token, options).json({
       success: true,
       user,
       token,
     });
-
-    // localStorage.setItem("watertankdoctorauthtoken", JSON.stringify(token));
-
-    // res.status(statusCode).json({
-    //   success: true,
-    //   user,
-    //   token,
-    // });
   } catch (error) {
     // Handle any errors that might occur during cookie setting or JSON response
     console.error("Error sending token:", error);
