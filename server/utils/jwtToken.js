@@ -9,17 +9,16 @@ export const sendToken = (user, statusCode, res) => {
       expires: new Date(
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ),
-      // httpOnly: true,
+      httpOnly: true,
       domain: "www.watertankdoctor.com", // Set the domain
       path: "/", // Set the path to '/'
     };
 
-    console.log(options);
+    // console.log(options);
 
     res.status(statusCode).cookie("token", token, options).json({
       success: true,
       user,
-      token,
     });
   } catch (error) {
     // Handle any errors that might occur during cookie setting or JSON response
