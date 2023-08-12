@@ -99,7 +99,7 @@ export const loadUser = () => async (dispatch) => {
       withCredentials: true,
     };
 
-    const { data } = await axios.post(
+    const { data } = await axios.get(
       "https://ecommerce-app-slah.onrender.com/api/v1/me",
       config
     );
