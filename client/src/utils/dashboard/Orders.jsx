@@ -16,10 +16,14 @@ const Orders = () => {
 
   useEffect(() => {
     dispatch(getAllOrders());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 2000);
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="grid grid-cols-6 gap-4 min-h-[100vh] pt-[15vh]">
