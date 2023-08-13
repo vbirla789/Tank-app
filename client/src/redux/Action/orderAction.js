@@ -85,7 +85,13 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_ORDERS_REQUEST });
 
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
       withCredentials: true,
     };
 
@@ -134,9 +140,16 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_ORDERS_REQUEST });
 
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
       withCredentials: true,
     };
+
     const { data } = await axios.delete(
       `https://ecommerce-app-slah.onrender.com/api/v1/admin/order/${id}`,
       config
