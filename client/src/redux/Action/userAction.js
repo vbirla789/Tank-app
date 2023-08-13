@@ -37,6 +37,13 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: data });
 
+    {
+      data ? console.log(data.token) : "";
+    }
+    if (data.token) {
+      localStorage.setItem("watertankauthtoken", data.token);
+    }
+
     toast.success(`Logged In Successfully`);
   } catch (error) {
     dispatch({
