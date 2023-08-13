@@ -37,9 +37,6 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: LOGIN_SUCCESS, payload: data });
 
-    {
-      data ? console.log(data.token) : "";
-    }
     if (data.token) {
       localStorage.setItem("watertankauthtoken", data.token);
     }
@@ -83,12 +80,15 @@ export const loadUser = () => async (dispatch) => {
   try {
     dispatch({ type: LOAD_REQUEST });
 
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("watertankauthtoken");
+
+    console.log(`token addded ${token}`);
 
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`, // Set the Authorization header
+        // Authorization: `Bearer ${token}`, // Set the Authorization header
+        Authorization: token,
       },
       withCredentials: true,
     };
