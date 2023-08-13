@@ -8,6 +8,8 @@ export const isAuthenticatedUser = asyncError(async (req, res, next) => {
   // const token = localStorage.getItem("watertankdoctorauthtoken");
   let token = req.headers["authorization"];
 
+  console.log(`token at backend ${token}`);
+
   if (!token) {
     return next(new ErrorHandler("Please login to access this resource", 401));
   }
