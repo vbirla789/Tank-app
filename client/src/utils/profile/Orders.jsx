@@ -13,7 +13,7 @@ const Orders = ({ orders }) => {
     }
   });
 
-  // console.log(orders);
+  console.log(orders);
   return (
     <div>
       {isAuthenticated ? (
