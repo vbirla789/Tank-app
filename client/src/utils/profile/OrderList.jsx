@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const OrderList = ({ _id, orderItems, orderStatus }) => {
+  console.log(orderItems);
   return (
     <div
       className=" color flex flex-col  gap-5 opacity-100 absolute top-0 right-0 py-[5vh] px-4 transition-all duration-500 w-[50%] sm:w-[100%] h-[100vh] mt-0 font-semibold text-xl "
