@@ -35,7 +35,7 @@ export const login = (email, password) => async (dispatch) => {
       config
     );
 
-    dispatch({ type: LOGIN_SUCCESS, payload: data.user });
+    dispatch({ type: LOGIN_SUCCESS, payload: data });
 
     toast.success(`Logged In Successfully`);
   } catch (error) {
