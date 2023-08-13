@@ -26,12 +26,16 @@ export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
 
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
       headers: {
         "Content-Type": "application/json",
+        Authorization: token,
       },
       withCredentials: true,
     };
+
     const { data } = await axios.post(
       "https://ecommerce-app-slah.onrender.com/api/v1/order/new",
       order,
