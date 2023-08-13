@@ -19,6 +19,7 @@ export const sendToken = (user, statusCode, res) => {
     res.status(statusCode).cookie("token", token, options).json({
       success: true,
       user,
+      token,
     });
   } catch (error) {
     // Handle any errors that might occur during cookie setting or JSON response
