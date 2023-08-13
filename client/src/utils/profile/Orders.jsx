@@ -19,9 +19,9 @@ const Orders = ({ orders }) => {
       {isAuthenticated ? (
         <div className="">
           {" "}
-          {orders.map((order) => (
-            <OrderList key={order._id} {...order} />
-          ))}
+          {orders
+            ? orders.map((order) => <OrderList key={order._id} {...order} />)
+            : ""}
         </div>
       ) : (
         ""
