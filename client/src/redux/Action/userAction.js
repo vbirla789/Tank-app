@@ -125,7 +125,13 @@ export const logout = () => async (dispatch) => {
 // get All Users
 export const getAllUsers = () => async (dispatch) => {
   try {
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
       withCredentials: true,
     };
 

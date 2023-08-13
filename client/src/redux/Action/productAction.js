@@ -12,7 +12,13 @@ export const getAdminProduct = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_PRODUCT_REQUEST });
 
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
       withCredentials: true,
     };
 
