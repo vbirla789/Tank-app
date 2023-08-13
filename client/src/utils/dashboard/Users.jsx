@@ -9,7 +9,7 @@ const Users = () => {
 
   const { error, users, loading } = useSelector((state) => state.allUsers);
 
-  console.log(users);
+  // console.log(users);
 
   useEffect(() => {
     if (error) {
