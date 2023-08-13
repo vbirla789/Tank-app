@@ -52,7 +52,13 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
+    const token = localStorage.getItem("watertankauthtoken");
+
     const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
       withCredentials: true,
     };
 

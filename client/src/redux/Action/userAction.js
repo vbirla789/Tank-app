@@ -82,12 +82,11 @@ export const loadUser = () => async (dispatch) => {
 
     const token = localStorage.getItem("watertankauthtoken");
 
-    console.log(`token addded ${token}`);
+    // console.log(`token addded ${token}`);
 
     const config = {
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${token}`, // Set the Authorization header
         Authorization: token,
       },
       withCredentials: true,
