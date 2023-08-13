@@ -65,7 +65,12 @@ export const register = (userData) => async (dispatch) => {
       userData,
       config
     );
-    dispatch({ type: REGISTER_SUCCESS, payload: data.user });
+    dispatch({ type: REGISTER_SUCCESS, payload: data });
+
+    if (data.token) {
+      localStorage.setItem("watertankauthtoken", data.token);
+    }
+
     toast.success(`User Registered Successfully`);
   } catch (error) {
     dispatch({
