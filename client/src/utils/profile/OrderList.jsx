@@ -13,7 +13,10 @@ const OrderList = ({ _id, orderItems, orderStatus }) => {
         <div className="flex justify-between items-center bg-[#FFFFFF1A] rounded-md px-2 py-3 lg:mb-2 ">
           <div className="flex flex-col">
             {orderItems.map((val, i) => (
-              <div className="flex flex-col items-center justify-center gap-2">
+              <div
+                className="flex flex-col items-center justify-center gap-2"
+                key={i}
+              >
                 <NavLink>
                   <img src={val.img} className="h-[50px] w-[50px]" />
                 </NavLink>
